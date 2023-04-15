@@ -32,7 +32,9 @@ export const ComboboxMaduan = () => {
             id="combo-box-demo"
             options={listMaDuAn}
             sx={{ width: 300 }}
-            renderInput={(params) => <TextField {...params} label="Mã dự án" />}
+            renderInput={(params) => <TextField {...params} label="Mã dự án" />
+           
+        }
         />
     )
 }

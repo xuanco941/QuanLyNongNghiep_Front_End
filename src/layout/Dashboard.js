@@ -21,6 +21,9 @@ import { mainListItems, secondaryListItems } from './listItems';
 import Header from './Header';
 import logo from "../asset/img/logo-leanway.png"
 import { ComboboxPhongban, ComboboxMaduan } from '../components/Combobox/Combobox';
+import Tags from '../components/Combobox/CMBPhongBan';
+import { useState } from 'react';
+import Stack from '@mui/material/Stack'
 
 
 function Copyright(props) {
@@ -35,7 +38,6 @@ function Copyright(props) {
         </Typography>
     );
 }
-
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -73,22 +75,29 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
                     easing: theme.transitions.easing.sharp,
                     duration: theme.transitions.duration.leavingScreen,
                 }),
-                width: theme.spacing(7),
+                width: theme.spacing(6),
                 [theme.breakpoints.up('sm')]: {
-                    width: theme.spacing(9),
+                    width: theme.spacing(7),
                 },
             }),
         },
     }),
 );
-
 const mdTheme = createTheme();
 
 function DashboardContent() {
+    const [upNumber, setUpNumber] = useState(0)
+    const handleUpNumber = () => {
+        setUpNumber(upNumber + 1)
+    }
+
     const [open, setOpen] = React.useState(true);
+    const [logoVisible, setLogoVisible] = React.useState(true);
     const toggleDrawer = () => {
         setOpen(!open);
+        setLogoVisible(!logoVisible);
     };
+
 
     return (
 
@@ -97,8 +106,6 @@ function DashboardContent() {
             <Box sx={{ display: 'flex' }}>
                 <CssBaseline />
                 <AppBar position="absolute" open={open}>
-
-
                 </AppBar>
                 <Drawer variant="permanent" open={open}>
                     <Toolbar
@@ -109,7 +116,7 @@ function DashboardContent() {
                             px: [1],
                         }}
                     >
-                        <img src={logo} width={180} />
+                        {logoVisible && <img src={logo} width={180} />}
                         <IconButton onClick={toggleDrawer}>
                             <ChevronLeftIcon />
                         </IconButton>
@@ -135,28 +142,61 @@ function DashboardContent() {
                 >
                     <Header />
 
-                    <Container sx={{ mt: 2, mb: 4 }}>
-                        <Box sx={{ flexGrow: 1 }}>
-                            <Grid container spacing={0}>
-                                <Grid item xs={3}>
-                                    
-                                </Grid>
-                                <Grid item xs={3}>
-                                    dfssdfsd
-                                </Grid>
+                    <Stack sx={{
+                        height: 'auto', backgroundColor: '#cdcdcd', display: 'flex',flexGrow : 1
+                    }}>
+                        <Grid container padding='10px' spacing={2} >
 
-
-
+                            <Grid item xs={12}>
+                                <Typography>123</Typography>
                             </Grid>
-                        </Box>
+
+                            <Grid item xs={false} sm = {3}>
+                                <Tags></Tags>
+                            </Grid>
+
+                            <Grid item xs={false} sm={3}>
+                                <Tags></Tags>
+                            </Grid>
+
+                            <Grid item xs={false} sm={3}>
+                                <Tags></Tags>
+                            </Grid>
+
+                            <Grid item xs={false} sm={3}>
+                                <Tags></Tags>
+                            </Grid>
+
+                            <Grid item xs={false} sm={3} >
+                                <Tags></Tags>
+                            </Grid>
+                            <Grid item xs={false} sm={3} >
+                                <Tags></Tags>
+                            </Grid>
+                            <Grid item xs={false} sm={3} >
+                                <Tags></Tags>
+                            </Grid>
+                            <Grid item xs={false} sm={12} >
+                                <Box></Box>
+                            </Grid>
+
+                        </Grid>
+
+                    </Stack>
+                    <Stack sx ={{
+                        height : 'auto',
+                        backgroundColor : '#cdcdcd'
+                                }}>
+                    <Grid> 
+
+                    </Grid>
 
 
+                    </Stack>
 
-
-                    </Container>
                 </Box>
             </Box>
-        </ThemeProvider>
+        </ThemeProvider >
     );
 }
 

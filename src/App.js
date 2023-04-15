@@ -5,10 +5,11 @@ import { UserAuthWrapper } from 'redux-auth-wrapper';
 import IssueDashboard from './screens/Dashboard/IssueDashboard';
 import AdminDashboard from './screens/Dashboard/AdminDashboard';
 import Login from './screens/Login/Login';
+import { useState } from 'react';
 
 
 function App() {
-    
+    const [couter,setCouter]= useState(0)
     return (
 
 
@@ -17,6 +18,7 @@ function App() {
                 <Route exact path='/' element={<Login />} />
                 <Route path='/issue-dashboard' element={<IssueDashboard />} />
                 <Route path='/admin-dashboard' element={<AdminDashboard />} />
+                
             </Routes>
         </BrowserRouter>
     );
