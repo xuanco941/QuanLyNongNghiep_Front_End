@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector  } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { login } from '../../redux/actions/loginAction'
 import LoadingFlag from '../LoadingFlag/LoadingFlag'
@@ -12,18 +12,13 @@ const FormLoginIssue = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    //const data = useSelector(state => state);
+    const data = useSelector(state => state.login);
     // const history = useHistory();
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const token = localStorage.getItem('token');
-    useEffect(() => {
-
-        if (token) {
-            navigate('/issue-dashboard', { replace: true });
-        }
-    }, [token, navigate]);
+    
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -31,10 +26,10 @@ const FormLoginIssue = () => {
         dispatch(login(username, password)).then(() => {
             setIsLoading(false);
             navigate("/issue-dashboard");
-            window.history.replaceState(null, null, window.location.pathname);
+            console.log(data.isAuthenticated);
         })
     };
-
+    
 
     return (
         <div>

@@ -1,4 +1,4 @@
-import { LOGIN, LOGIN_FAILED } from "./../constants/actionTypes"
+import { LOGIN, LOGIN_FAILED, LOGOUT } from "./../constants/actionTypes"
 
 const initialState = {
     isAuthenticated: false,
@@ -22,6 +22,13 @@ export default function loginReducer(state = initialState, action){
                 error: action.payload,
                 user: null
             };
+        case LOGOUT:
+            return{
+                ...state,
+                isAuthenticated: false,
+                error: null,
+                user: null
+            }
         default:
             return state;
     }

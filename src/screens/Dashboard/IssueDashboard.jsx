@@ -1,25 +1,22 @@
 import React from 'react'
 import { useEffect } from 'react';
 import Dashboard from '../../layout/Dashboard';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
+import { logout } from '../../redux/actions/logoutAction';
 const IssueDashboard = () => {
+    const dispatch = useDispatch();
     const navigate = useNavigate();
-    const selector = useSelector(state => state);
-    console.log(selector);
+    const selector = useSelector(state => state.login);
+    console.log(selector.isAuthenticated);
     //const token = JSON.parse(localStorage.getItem('token'));
     
     
-    useEffect(()=>{
-        const token = localStorage.getItem('token');
-        if(!token){
-            navigate('/', { replace: true });
-            
-        }
-    },[navigate]);
+
     const handleClick = () =>{
+        dispatch(logout());
         localStorage.removeItem('token');
-        navigate('/', { replace: true });
+
     }
     return (
         <div>
