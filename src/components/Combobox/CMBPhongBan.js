@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 
 export default function Tags() {
     return (
-        <Stack spacing={3} sx={{ width: 250 }}>
+        <Stack spacing={3} sx={{ width: '100%' }}>
             <Autocomplete
                 multiple
                 limitTags={1}
@@ -17,7 +17,7 @@ export default function Tags() {
                 renderInput={(params) => (
                     <TextField {...params} label="Phòng ban" />
                 )}
-                sx={{ width: '350px'}}
+                sx={{ width: '100%' }}
                 
             />
         </Stack>

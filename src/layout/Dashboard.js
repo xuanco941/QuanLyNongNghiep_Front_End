@@ -22,6 +22,7 @@ import Header from './Header';
 import logo from "../asset/img/logo-leanway.png"
 import { ComboboxPhongban, ComboboxMaduan } from '../components/Combobox/Combobox';
 import Tags from '../components/Combobox/CMBPhongBan';
+import MyComponent from '../components/Table/TableIssue';
 import { useState } from 'react';
 import Stack from '@mui/material/Stack'
 
@@ -143,7 +144,7 @@ function DashboardContent() {
                     <Header />
 
                     <Stack sx={{
-                        height: 'auto', backgroundColor: '#cdcdcd', display: 'flex',flexGrow : 1
+                        height: 'auto', backgroundColor: '#cdcdcd', display: 'flex', flexGrow: 1
                     }}>
                         <Grid container padding='10px' spacing={2} >
 
@@ -151,7 +152,7 @@ function DashboardContent() {
                                 <Typography>123</Typography>
                             </Grid>
 
-                            <Grid item xs={false} sm = {3}>
+                            <Grid item xs={false} sm={3}>
                                 <Tags></Tags>
                             </Grid>
 
@@ -183,13 +184,14 @@ function DashboardContent() {
                         </Grid>
 
                     </Stack>
-                    <Stack sx ={{
-                        height : 'auto',
-                        backgroundColor : '#cdcdcd'
-                                }}>
-                    <Grid> 
+                    <Stack sx={{
+                        height: 'auto',
+                        backgroundColor: '#cdcdcd'
+                    }}>
+                        <MyComponent />
+                        <Grid>
 
-                    </Grid>
+                        </Grid>
 
 
                     </Stack>

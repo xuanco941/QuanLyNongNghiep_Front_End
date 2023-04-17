@@ -5,6 +5,7 @@ import { UserAuthWrapper } from 'redux-auth-wrapper';
 import { useSelector } from 'react-redux';
 import IssueDashboard from './screens/Dashboard/IssueDashboard';
 import AdminDashboard from './screens/Dashboard/AdminDashboard';
+import Detail from './screens/Detail/Detail';
 import Login from './screens/Login/Login';
 
 
@@ -24,8 +25,10 @@ import Login from './screens/Login/Login';
 
 
             <Routes>
-                <Route path='/' element={token ? <IssueDashboard /> : <Login />} />
+                <Route exact  path='/' element={token ? <IssueDashboard /> : <Login />} />
                 <Route path='/issue-dashboard' element={token ? <IssueDashboard /> : <Login />} />
+                <Route path='/detail' element={<Detail />} />
+
                 <Route path='/admin-dashboard' element={<AdminDashboard />} />
             </Routes>
         );
