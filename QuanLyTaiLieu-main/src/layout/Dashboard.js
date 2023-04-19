@@ -25,7 +25,8 @@ import Tags from '../components/Combobox/CMBPhongBan';
 import MyComponent from '../components/Table/TableIssue';
 import { useState } from 'react';
 import Stack from '@mui/material/Stack'
-import ButtonAdd from '../components/Button/Button';
+import { LineGraph } from '../components/Chart/LineChart'
+import In4 from '../components/HMI/in4';
 
 
 function Copyright(props) {
@@ -147,9 +148,11 @@ function DashboardContent() {
                     <Stack sx={{
                         height: 'auto', backgroundColor: '#cdcdcd', display: 'flex', flexGrow: 1
                     }}>
-                        <Grid container padding='10px' spacing={2} >
+                        <Grid container padding='10px' spacing={0} >
+                        <LineGraph></LineGraph>
+                        <In4></In4>
 
-                            <Grid item xs={12}>
+                            {/* <Grid item xs={12}>
                                 <Typography>123</Typography>
                             </Grid>
 
@@ -180,19 +183,23 @@ function DashboardContent() {
                             </Grid>
                             <Grid item xs={false} sm={12} >
                                 <Box></Box>
-                            </Grid>
+                            </Grid> */}
 
                         </Grid>
+                        
 
                     </Stack>
                     <Stack sx={{
-                        height: 'auto',
-                        backgroundColor: '#cdcdcd'
+                        height: '100%',
+                        backgroundColor: '#cdcdcd',
+                        weight :'100%'
                     }}>
-                        <MyComponent />
-                        <Grid>
-                            <ButtonAdd></ButtonAdd>
-                        </Grid>
+                        {/* <MyComponent/> */}
+                        
+                        
+                        
+                        
+                       
 
 
                     </Stack>
