@@ -152,7 +152,7 @@ function DashboardContent() {
                         <LineGraph></LineGraph>
                         <In4></In4>
 
-                            {/* <Grid item xs={12}>
+                            <Grid item xs={12}>
                                 <Typography>123</Typography>
                             </Grid>
 
@@ -183,7 +183,7 @@ function DashboardContent() {
                             </Grid>
                             <Grid item xs={false} sm={12} >
                                 <Box></Box>
-                            </Grid> */}
+                            </Grid>
 
                         </Grid>
                         
