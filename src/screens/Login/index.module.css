@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900');
 
 .section {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
     line-height: 1.7;
-    color: #ffeba7;
+    color: #ffffff;
     background-color: #1f2029;
 }
 
@@ -120,6 +120,7 @@ h6 span {
 
 .card-back {
     transform: rotateY(180deg);
+    
 }
 
 .checkbox:checked~.card-3d-wrap .card-3d-wrapper {

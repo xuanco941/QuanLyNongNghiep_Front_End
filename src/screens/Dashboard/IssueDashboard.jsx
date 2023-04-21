@@ -8,7 +8,7 @@ const IssueDashboard = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const selector = useSelector(state => state.login);
-    console.log(selector.isAuthenticated);
+    // console.log(selector.isAuthenticated);
     //const token = JSON.parse(localStorage.getItem('token'));
     
     
@@ -16,11 +16,12 @@ const IssueDashboard = () => {
     const handleClick = () =>{
         dispatch(logout());
         localStorage.removeItem('token');
+        
 
     }
     return (
         <div>
-            <Dashboard />
+            <Dashboard/>
             <button onClick={()=>handleClick()}>Đăng xuất</button>
         </div>
 

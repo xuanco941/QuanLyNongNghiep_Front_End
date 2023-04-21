@@ -7,7 +7,7 @@
     padding-left: 55px;
     height: 48px;
     width: 100%;
-    font-weight: 500;
+    font-weight: bold;
     border-radius: 4px;
     font-size: 14px;
     line-height: 22px;
@@ -19,6 +19,7 @@
     -webkit-transition: all 200ms linear;
     transition: all 200ms linear;
     box-shadow: 0 4px 8px 0 rgba(21, 21, 21, .2);
+    
 }
 .inputIcon {
     position: absolute;

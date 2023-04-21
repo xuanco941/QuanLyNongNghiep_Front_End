@@ -50,7 +50,7 @@ const Header = () => {
           {isSmScreen  ? (
             <Collapse in={showGrid}>
               <Grid container spacing={0} >
-              <Grid xs={3}>
+              <Grid item xs={3}>
                             <Paper className={styles.item} elevation={3} style={{ padding: '10px 20px', borderRadius: '0px', width: '100%', boxShadow: '0px 0px 0px 1px #0000001A', }}>
                                 <p>Tài liệu chờ phê duyệt</p>
                                 <h1>3</h1>

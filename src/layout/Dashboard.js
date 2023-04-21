@@ -27,6 +27,7 @@ import { useState } from 'react';
 import Stack from '@mui/material/Stack'
 import { LineGraph } from '../components/Chart/LineChart'
 import In4 from '../components/HMI/in4';
+import BasicCard from '../components/Box/CardHMI';
 
 
 function Copyright(props) {
@@ -149,8 +150,8 @@ function DashboardContent() {
                         height: 'auto', backgroundColor: '#cdcdcd', display: 'flex', flexGrow: 1
                     }}>
                         <Grid container padding='10px' spacing={0} >
-                        <LineGraph></LineGraph>
-                        <In4></In4>
+                            <LineGraph></LineGraph>
+                            <In4></In4>
 
                             <Grid item xs={12}>
                                 <Typography>123</Typography>
@@ -186,20 +187,21 @@ function DashboardContent() {
                             </Grid>
 
                         </Grid>
-                        
+
 
                     </Stack>
                     <Stack sx={{
                         height: '100%',
                         backgroundColor: '#cdcdcd',
-                        weight :'100%'
+                        weight: '100%'
                     }}>
-                        {/* <MyComponent/> */}
-                        
-                        
-                        
-                        
-                       
+                        <Grid item xs={12} md={8} lg={6}>
+
+                            
+                        </Grid>
+
+
+
 
 
                     </Stack>

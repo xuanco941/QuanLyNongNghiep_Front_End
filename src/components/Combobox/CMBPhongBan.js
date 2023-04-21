@@ -24,7 +24,7 @@ export default function Tags() {
     );
 }
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
-console.log(typeof top100)
+
 const top100Films = [
     { title: 'The Shawshank Redemption', year: 1994 },
     { title: 'The Godfather', year: 1972 },
