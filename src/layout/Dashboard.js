@@ -28,6 +28,10 @@ import Stack from '@mui/material/Stack'
 import { LineGraph } from '../components/Chart/LineChart'
 import In4 from '../components/HMI/in4';
 import BasicCard from '../components/Box/CardHMI';
+import ButtonAdd from '../components/Button/Button';
+import DateTimePickerValue from '../components/TimePicker/DateTo'
+import FirstComponent from '../components/TimePicker/DateTo';
+import DeviceList from '../components/HMI/in4';
 
 
 function Copyright(props) {
@@ -144,16 +148,20 @@ function DashboardContent() {
                         overflow: 'auto',
                     }}
                 >
-                    <Header />
+                    {/* <Header /> */}
 
                     <Stack sx={{
                         height: 'auto', backgroundColor: '#cdcdcd', display: 'flex', flexGrow: 1
                     }}>
-                        <Grid container padding='10px' spacing={0} >
+                        <Grid container padding='10px' spacing={3} >
                             <LineGraph></LineGraph>
-                            <In4></In4>
+                            
+                            <DeviceList></DeviceList>
+                            
+                            
+                            
 
-                            <Grid item xs={12}>
+                            {/* <Grid item xs={12}>
                                 <Typography>123</Typography>
                             </Grid>
 
@@ -184,7 +192,7 @@ function DashboardContent() {
                             </Grid>
                             <Grid item xs={false} sm={12} >
                                 <Box></Box>
-                            </Grid>
+                            </Grid> */}
 
                         </Grid>
 
@@ -198,6 +206,8 @@ function DashboardContent() {
                         <Grid item xs={12} md={8} lg={6}>
 
                             
+                           <FirstComponent></FirstComponent>
+                           {/* <MyComponent></MyComponent> */}
                         </Grid>
 
 

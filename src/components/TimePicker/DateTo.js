@@ -1,22 +1,26 @@
 import * as React from 'react';
-import dayjs from 'dayjs';
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import { TextField } from '@mui/material';
 
-export default function DateTimePickerValue() {
-  const [value, setValue] = React.useState(dayjs('2022-04-17T15:30'));
+export default function FirstComponent() {
+  const [selectedDate, setSelectedDate] = React.useState(null);
+
+  const handleDateChange = (date) => {
+    setSelectedDate(date);
+    console.log( new Date(date.$d).toLocaleDateString('vi-VI'));
+  };
 
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs}>
-      
-       
-        <DateTimePicker
-          label="Controlled picker"
-          value={value}
-          onChange={(newValue) => setValue(newValue)}
-        />
+      <DatePicker
+        label="Select Date"
+        value={selectedDate}
+        onChange={handleDateChange}
+        renderInput={(params) => <TextField {...params} />}
+        format="DD-MM-YYYY"
+      />
     </LocalizationProvider>
   );
 }
