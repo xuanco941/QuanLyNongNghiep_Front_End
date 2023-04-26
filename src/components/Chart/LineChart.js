@@ -52,6 +52,8 @@ const device = [
 const categories = device.map(item => item.category);
 const value = device.map(item => item.valueGateway);
 
+
+
 const option = {
     responsive: true,
     plugins: {

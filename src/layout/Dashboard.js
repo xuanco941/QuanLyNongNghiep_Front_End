@@ -32,6 +32,8 @@ import ButtonAdd from '../components/Button/Button';
 import DateTimePickerValue from '../components/TimePicker/DateTo'
 import FirstComponent from '../components/TimePicker/DateTo';
 import DeviceList from '../components/HMI/in4';
+import DatePicker from '../components/TimePicker/DateTo';
+import TableAler from '../components/TableAler/Aler';
 
 
 function Copyright(props) {
@@ -106,7 +108,6 @@ function DashboardContent() {
         setLogoVisible(!logoVisible);
     };
 
-
     return (
 
         <ThemeProvider theme={mdTheme}>
@@ -139,10 +140,7 @@ function DashboardContent() {
                 <Box
                     component="main"
                     sx={{
-                        backgroundColor: (theme) =>
-                            theme.palette.mode === 'light'
-                                ? theme.palette.grey[100]
-                                : theme.palette.grey[900],
+
                         flexGrow: 1,
                         height: '100vh',
                         overflow: 'auto',
@@ -153,69 +151,21 @@ function DashboardContent() {
                     <Stack sx={{
                         height: 'auto', backgroundColor: '#cdcdcd', display: 'flex', flexGrow: 1
                     }}>
-                        <Grid container padding='10px' spacing={3} >
-                            <LineGraph></LineGraph>
-                            
-                            <DeviceList></DeviceList>
-                            
-                            
-                            
-
-                            {/* <Grid item xs={12}>
-                                <Typography>123</Typography>
+                        <Grid>
+                            <Grid>
+                            <TableAler />
                             </Grid>
 
-                            <Grid item xs={false} sm={3}>
-                                <Tags></Tags>
+                            <Grid item xs={12} sm={12} md={12}>
+                            <DeviceList />
                             </Grid>
 
-                            <Grid item xs={false} sm={3}>
-                                <Tags></Tags>
-                            </Grid>
 
-                            <Grid item xs={false} sm={3}>
-                                <Tags></Tags>
-                            </Grid>
+                            <DatePicker />
 
-                            <Grid item xs={false} sm={3}>
-                                <Tags></Tags>
-                            </Grid>
-
-                            <Grid item xs={false} sm={3} >
-                                <Tags></Tags>
-                            </Grid>
-                            <Grid item xs={false} sm={3} >
-                                <Tags></Tags>
-                            </Grid>
-                            <Grid item xs={false} sm={3} >
-                                <Tags></Tags>
-                            </Grid>
-                            <Grid item xs={false} sm={12} >
-                                <Box></Box>
-                            </Grid> */}
-
+                            {/* <MyComponent></MyComponent> */}
                         </Grid>
-
-
                     </Stack>
-                    <Stack sx={{
-                        height: '100%',
-                        backgroundColor: '#cdcdcd',
-                        weight: '100%'
-                    }}>
-                        <Grid item xs={12} md={8} lg={6}>
-
-                            
-                           <FirstComponent></FirstComponent>
-                           {/* <MyComponent></MyComponent> */}
-                        </Grid>
-
-
-
-
-
-                    </Stack>
-
                 </Box>
             </Box>
         </ThemeProvider >
