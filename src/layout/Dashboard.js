@@ -3,6 +3,7 @@ import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
@@ -25,6 +26,14 @@ import Tags from '../components/Combobox/CMBPhongBan';
 import MyComponent from '../components/Table/TableIssue';
 import { useState } from 'react';
 import Stack from '@mui/material/Stack'
+
+import StepsModal from '../components/Form/DemoModal';
+import MyButton from '../components/Icon/IconComponent';
+
+
+
+
+
 
 
 function Copyright(props) {
@@ -98,8 +107,17 @@ function DashboardContent() {
         setOpen(!open);
         setLogoVisible(!logoVisible);
     };
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const openModal = () => {
+        setModalIsOpen(true);
+    };
 
 
+
+    //Test thêm cb
+
+    
+    //endtest
     return (
 
         <ThemeProvider theme={mdTheme}>
@@ -143,7 +161,7 @@ function DashboardContent() {
                 >
                     <Header />
 
-                    <Stack sx={{
+                    {/* <Stack sx={{
                         height: 'auto', backgroundColor: '#cdcdcd', display: 'flex', flexGrow: 1
                     }}>
                         <Grid container padding='10px' spacing={2} >
@@ -183,12 +201,21 @@ function DashboardContent() {
 
                         </Grid>
 
-                    </Stack>
+                    </Stack> */}
                     <Stack sx={{
                         height: 'auto',
                         backgroundColor: '#cdcdcd'
                     }}>
-                        <MyComponent />
+
+
+                        <Button onClick={openModal} variant="contained" color="success">
+                            Thêm hệ giám sát
+                        </Button>
+                        <StepsModal
+                            isOpen={modalIsOpen}
+                            onClose={() => setModalIsOpen(false)}
+                        />
+                        
                         <Grid>
 
                         </Grid>

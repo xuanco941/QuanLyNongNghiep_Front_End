@@ -3,7 +3,7 @@ import styles from "./index.module.css"
 import FormLoginIssue from '../../components/Form/FormLoginIssue'
 import "./styles.css"
 import logo from "./../../asset/img/logo-leanway.png"
-import FormLoginAdmin from '../../components/Form/FormLoginAdmin'
+
 function Login() {
     return (
         <div className={styles.section}>
@@ -26,14 +26,7 @@ function Login() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="card-back">
-                                        <div className={styles.centerWrap}>
-                                            <div className="section text-center">
-                                                <FormLoginAdmin />
-                                            </div>
-
-                                        </div>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
