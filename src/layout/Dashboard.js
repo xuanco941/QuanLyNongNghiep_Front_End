@@ -3,6 +3,7 @@ import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
 import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
@@ -34,7 +35,8 @@ import FirstComponent from '../components/TimePicker/DateTo';
 import DeviceList from '../components/HMI/in4';
 import DatePicker from '../components/TimePicker/DateTo';
 import TableAler from '../components/TableAler/Aler';
-
+import StepsModal from '../components/Form/DemoModal';
+import MyButton from '../components/Icon/IconComponent';
 
 function Copyright(props) {
     return (
@@ -107,7 +109,17 @@ function DashboardContent() {
         setOpen(!open);
         setLogoVisible(!logoVisible);
     };
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const openModal = () => {
+        setModalIsOpen(true);
+    };
 
+
+
+    //Test thêm cb
+
+    
+    //endtest
     return (
 
         <ThemeProvider theme={mdTheme}>
@@ -140,32 +152,79 @@ function DashboardContent() {
                 <Box
                     component="main"
                     sx={{
-
+                        backgroundColor: (theme) =>
+                            theme.palette.mode === 'light'
+                                ? theme.palette.grey[100]
+                                : theme.palette.grey[900],
                         flexGrow: 1,
                         height: '100vh',
                         overflow: 'auto',
                     }}
                 >
-                    {/* <Header /> */}
+                    <Header />
 
-                    <Stack sx={{
+                    {/* <Stack sx={{
                         height: 'auto', backgroundColor: '#cdcdcd', display: 'flex', flexGrow: 1
                     }}>
-                        <Grid>
-                            <Grid>
-                            <TableAler />
+                        <Grid container padding='10px' spacing={2} >
+
+                            <Grid item xs={12}>
+                                <Typography>123</Typography>
                             </Grid>
 
-                            <Grid item xs={12} sm={12} md={12}>
-                            <DeviceList />
+                            <Grid item xs={false} sm={3}>
+                                <Tags></Tags>
                             </Grid>
 
+                            <Grid item xs={false} sm={3}>
+                                <Tags></Tags>
+                            </Grid>
 
-                            <DatePicker />
+                            <Grid item xs={false} sm={3}>
+                                <Tags></Tags>
+                            </Grid>
 
-                            {/* <MyComponent></MyComponent> */}
+                            <Grid item xs={false} sm={3}>
+                                <Tags></Tags>
+                            </Grid>
+
+                            <Grid item xs={false} sm={3} >
+                                <Tags></Tags>
+                            </Grid>
+                            <Grid item xs={false} sm={3} >
+                                <Tags></Tags>
+                            </Grid>
+                            <Grid item xs={false} sm={3} >
+                                <Tags></Tags>
+                            </Grid>
+                            <Grid item xs={false} sm={12} >
+                                <Box></Box>
+                            </Grid>
+
                         </Grid>
+
+                    </Stack> */}
+                    <Stack sx={{
+                        height: 'auto',
+                        backgroundColor: '#cdcdcd'
+                    }}>
+
+
+                        <Button onClick={openModal} variant="contained" color="success">
+                            Thêm hệ giám sát
+                        </Button>
+                        <StepsModal
+                            isOpen={modalIsOpen}
+                            onClose={() => setModalIsOpen(false)}
+                        />
+                        
+                        <Grid>
+
+                        </Grid>
+
+
                     </Stack>
+
                 </Box>
             </Box>
         </ThemeProvider >

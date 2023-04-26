@@ -28,7 +28,6 @@ export const mainListItems = (
             </ListItemIcon>
             <ListItemText primary="Reports" />
         </ListItemButton>
-
     </React.Fragment>
 );
 

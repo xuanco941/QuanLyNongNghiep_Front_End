@@ -19,23 +19,21 @@ const FormLoginIssue = () => {
 
     const token = localStorage.getItem('token');
 
-
     const handleSubmit = e => {
         e.preventDefault();
         setIsLoading(true);
-        dispatch(login(username, password))
-        .then(() => {
+        dispatch(login(username, password)).then(() => {
             setIsLoading(false);
             navigate("/issue-dashboard");
             console.log(data.isAuthenticated);
         })
     };
-
+    
 
     return (
         <div>
             <LoadingFlag isLoading={isLoading} />
-            <form onSubmit={handleSubmit} >
+            <form onSubmit={handleSubmit}>
 
                 <div className={styles.logo}>
                     <img src={logo} width="100%" alt="" srcset="" />

@@ -14,8 +14,7 @@ function Login() {
                         <div className={`${styles.section} pb-5 pt-5 pt-sm-2 text-center`}>
                             <h6 className="mb-0 pb-3"><span>Nhân viên </span><span>Admin</span></h6>
 
-                            <input  className="checkbox" type="checkbox"  id="reg-log" name="reg-log" />
-                            
+                            <input className="checkbox" type="checkbox" id="reg-log" name="reg-log" />
                             <label for="reg-log"></label>
                             <div className="card-3d-wrap mx-auto">
                                 <div className="card-3d-wrapper">
