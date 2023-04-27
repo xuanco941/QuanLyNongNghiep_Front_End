@@ -8,7 +8,11 @@ import FormAddSensor from "./FormAddSensor";
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
+import DeviceInfo from "../HMI/in4";
+
 //test
+
+
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -32,6 +36,9 @@ const StepsModal = ({ isOpen, onClose }) => {
     const handleFinish = () => {
         onClose();
         setStep(1);
+        
+        
+        
     };
     const top100Films = [
         { label: 'The Shawshank Redemption', year: 1994 },
@@ -62,6 +69,14 @@ const StepsModal = ({ isOpen, onClose }) => {
     };
 
 
+
+
+
+
+
+
+
+
     const [componentCount, setComponentCount] = useState(1);
 
     const addComponent = () => {
@@ -74,17 +89,55 @@ const StepsModal = ({ isOpen, onClose }) => {
     }
 
 
+    const [device, setDevices] = useState([
+        {
+            category: "Hệ 1",
+            NhietDo: "32",
+            ApSuat: "17",
+        },
+        {
+
+            category: "Hệ 2",
+            DoAm: "70",
+            ApSuat: "17",
+            AnhSang: "20",
+        },
+        {
+
+            category: "Hệ 3",
+            DoAm: "70",
+            ApSuat: "17",
+            AnhSang: "20",
+        },
+
+    ]);
+
+    const [newCategory, setNewCategory] = useState("");
+
+    const handleTextFieldChange = async (event) => {
+        await setNewCategory(event.target.value);
+        console.log(newCategory)
+    };
+
+    const handleAddCategory = () => {
+        const newDevice = {
+            category: newCategory,
+        };
+        setDevices(device => {
+            const updatedDevices = [...device, newDevice];
+            console.log(updatedDevices);
+            return updatedDevices;
+        });
+    };
+
+
+
     return (
-        <Modal
-            isOpen={isOpen}
-            onRequestClose={onClose}
-            style={customStyles}
-            contentLabel="Steps Modal"
-        >
+        <Modal isOpen={isOpen} onRequestClose={onClose} style={customStyles} contentLabel="Steps Modal">
             {step === 1 && (
                 <form>
                     <h2>Thông tin hệ</h2>
-                    <Stack sx={{ boxShadow: 'none' }} spacing={2}>
+                    <Stack sx={{ boxShadow: "none" }} spacing={2}>
                         <Item>
                             <IconComponent />
                         </Item>
@@ -94,10 +147,21 @@ const StepsModal = ({ isOpen, onClose }) => {
                                 id="outlined-required"
                                 label="Tên hệ"
                                 sx={{ width: "100%" }}
+                                value={newCategory}
+                                onChange={handleTextFieldChange
+                                
+                                }
                             />
                         </Item>
                         <Item>
-                        <Button onClick={handleNextStep} variant="contained">Tiếp</Button>
+                            <Button className="ThemHe" onClick={() => {
+                                handleAddCategory();
+                                handleNextStep();
+                                console.log(newCategory)
+
+                            }} variant="contained">
+                                Tiếp
+                            </Button>
                         </Item>
                     </Stack>
                 </form>
@@ -113,12 +177,16 @@ const StepsModal = ({ isOpen, onClose }) => {
                                     id="combo-box-demo"
                                     options={top100Films}
                                     sx={{ width: "100%" }}
-                                    renderInput={(params) => <TextField {...params} label="Gateway" />}
+                                    renderInput={(params) => <TextField {...params} label="Gateway"
+                                    />}
                                 />
                             </Item>
                             <Item>
-                                <Button onClick={handlePreviousStep} sx={{ marginRight: "20px" }} variant="contained">Quay lại</Button>
-                                <Button onClick={handleNextStep} variant="contained">Tiếp</Button>
+                                <Button onClick={handlePreviousStep} handlePreviousStep sx={{ marginRight: "20px" }} variant="contained">Quay lại</Button>
+                                <Button onClick={() => {
+                                    handleNextStep()
+                                    
+                                }} variant="contained">Tiếp</Button>
                             </Item>
                         </Stack>
                     </form>
@@ -134,7 +202,7 @@ const StepsModal = ({ isOpen, onClose }) => {
                         <Item>
                             <Button onClick={addComponent} sx={{ marginRight: "20px" }} variant="contained">Thêm cảm biến</Button>
                             <Button onClick={handlePreviousStep} sx={{ marginRight: "20px" }} variant="contained">Quay lại</Button>
-                            <Button onClick={handleFinish} variant="contained">Hoàn thành</Button>
+                            <Button onClick={handleFinish} className="hoanThanh" variant="contained">Hoàn thành</Button>
                         </Item>
                     </Stack>
                 </div>

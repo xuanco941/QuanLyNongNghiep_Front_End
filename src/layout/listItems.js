@@ -13,11 +13,11 @@ import { Link } from 'react-router-dom';
 
 export const mainListItems = (
     <React.Fragment>
-        <ListItemButton>
+        <ListItemButton component={Link} to='/'>
             <ListItemIcon>
                 <DashboardIcon />
             </ListItemIcon>
-            <ListItemText primary="Trang chủ"></ListItemText>
+            <ListItemText primary="Trang chủ" ></ListItemText>
         </ListItemButton>
 
 

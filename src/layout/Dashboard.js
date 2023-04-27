@@ -10,14 +10,10 @@ import List from '@mui/material/List';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
-import MenuIcon from '@mui/icons-material/Menu';
+import Link from '@mui/material/Link'; import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
 import Header from './Header';
 import logo from "../asset/img/logo-leanway.png"
@@ -28,15 +24,13 @@ import { useState } from 'react';
 import Stack from '@mui/material/Stack'
 import { LineGraph } from '../components/Chart/LineChart'
 import In4 from '../components/HMI/in4';
-import BasicCard from '../components/Box/CardHMI';
-import ButtonAdd from '../components/Button/Button';
 import DateTimePickerValue from '../components/TimePicker/DateTo'
 import FirstComponent from '../components/TimePicker/DateTo';
 import DeviceList from '../components/HMI/in4';
 import DatePicker from '../components/TimePicker/DateTo';
 import TableAler from '../components/TableAler/Aler';
 import StepsModal from '../components/Form/DemoModal';
-import MyButton from '../components/Icon/IconComponent';
+import DeviceInfo from '../components/HMI/in4';
 
 function Copyright(props) {
     return (
@@ -109,16 +103,21 @@ function DashboardContent() {
         setOpen(!open);
         setLogoVisible(!logoVisible);
     };
+    
+
+
+
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const openModal = () => {
         setModalIsOpen(true);
     };
 
-
+    
+    
 
     //Test thêm cb
 
-    
+
     //endtest
     return (
 
@@ -161,63 +160,25 @@ function DashboardContent() {
                         overflow: 'auto',
                     }}
                 >
-                    <Header />
 
-                    {/* <Stack sx={{
-                        height: 'auto', backgroundColor: '#cdcdcd', display: 'flex', flexGrow: 1
-                    }}>
-                        <Grid container padding='10px' spacing={2} >
-
-                            <Grid item xs={12}>
-                                <Typography>123</Typography>
-                            </Grid>
-
-                            <Grid item xs={false} sm={3}>
-                                <Tags></Tags>
-                            </Grid>
-
-                            <Grid item xs={false} sm={3}>
-                                <Tags></Tags>
-                            </Grid>
-
-                            <Grid item xs={false} sm={3}>
-                                <Tags></Tags>
-                            </Grid>
-
-                            <Grid item xs={false} sm={3}>
-                                <Tags></Tags>
-                            </Grid>
-
-                            <Grid item xs={false} sm={3} >
-                                <Tags></Tags>
-                            </Grid>
-                            <Grid item xs={false} sm={3} >
-                                <Tags></Tags>
-                            </Grid>
-                            <Grid item xs={false} sm={3} >
-                                <Tags></Tags>
-                            </Grid>
-                            <Grid item xs={false} sm={12} >
-                                <Box></Box>
-                            </Grid>
-
-                        </Grid>
-
-                    </Stack> */}
                     <Stack sx={{
                         height: 'auto',
                         backgroundColor: '#cdcdcd'
                     }}>
 
-
+                        <TableAler></TableAler>
                         <Button onClick={openModal} variant="contained" color="success">
                             Thêm hệ giám sát
                         </Button>
                         <StepsModal
                             isOpen={modalIsOpen}
-                            onClose={() => setModalIsOpen(false)}
+                            onClose={() => { setModalIsOpen(false) 
+                            }}
+
                         />
-                        
+                     <DeviceInfo></DeviceInfo>
+                     <MyComponent></MyComponent>
+                     <LineGraph></LineGraph>
                         <Grid>
 
                         </Grid>
