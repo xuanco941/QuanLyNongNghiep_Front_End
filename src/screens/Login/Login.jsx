@@ -1,11 +1,13 @@
 import React from 'react'
 import styles from "./index.module.css"
 import FormLoginIssue from '../../components/Form/FormLoginIssue'
-import "./styles.css"
+import "./styles.css";
+import { Link } from 'react-router-dom';
 import logo from "./../../asset/img/logo-leanway.png"
 import FormLoginAdmin from '../../components/Form/FormLoginAdmin'
+import FormRegister from '../../components/Form/FormRegister'
 function Login() {
-    
+
     return (
         <div className={styles.section}>
             <div className="container">
@@ -22,15 +24,16 @@ function Login() {
                                         <div className={styles.centerWrap}>
                                             <div className="section text-center">
                                                 <FormLoginIssue />
-                                                <p className="mb-0 mt-4 text-center"><a href="https://www.web-leb.com/code"
-                                                    className={styles.link}>Quên mật khẩu ?</a></p>
+                                                <p className="mb-0 mt-4 text-center">
+                                                    <Link className={styles.link} to={'/forgot-password'} >Quên mật khẩu ?</Link>
+                                                </p>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="card-back">
                                         <div className={styles.centerWrap}>
                                             <div className="section text-center">
-                                                <FormLoginAdmin />
+                                                <FormRegister />
                                             </div>
 
                                         </div>

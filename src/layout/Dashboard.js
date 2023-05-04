@@ -163,47 +163,6 @@ function DashboardContent() {
                 >
                     <Header />
 
-                    {/* <Stack sx={{
-                        height: 'auto', backgroundColor: '#cdcdcd', display: 'flex', flexGrow: 1
-                    }}>
-                        <Grid container padding='10px' spacing={2} >
-
-                            <Grid item xs={12}>
-                                <Typography>123</Typography>
-                            </Grid>
-
-                            <Grid item xs={false} sm={3}>
-                                <Tags></Tags>
-                            </Grid>
-
-                            <Grid item xs={false} sm={3}>
-                                <Tags></Tags>
-                            </Grid>
-
-                            <Grid item xs={false} sm={3}>
-                                <Tags></Tags>
-                            </Grid>
-
-                            <Grid item xs={false} sm={3}>
-                                <Tags></Tags>
-                            </Grid>
-
-                            <Grid item xs={false} sm={3} >
-                                <Tags></Tags>
-                            </Grid>
-                            <Grid item xs={false} sm={3} >
-                                <Tags></Tags>
-                            </Grid>
-                            <Grid item xs={false} sm={3} >
-                                <Tags></Tags>
-                            </Grid>
-                            <Grid item xs={false} sm={12} >
-                                <Box></Box>
-                            </Grid>
-
-                        </Grid>
-
-                    </Stack> */}
                     <Stack sx={{
                         height: 'auto',
                         backgroundColor: '#cdcdcd'

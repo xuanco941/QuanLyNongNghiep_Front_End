@@ -8,6 +8,7 @@ import IssueDashboard from './screens/Dashboard/IssueDashboard';
 import AdminDashboard from './screens/Dashboard/AdminDashboard';
 import Detail from './screens/Detail/Detail';
 import Login from './screens/Login/Login';
+import FormFogotPassword from './components/Form/FormFogotPassword';
 
 
     function App() {
@@ -31,6 +32,7 @@ import Login from './screens/Login/Login';
                 <Route path='/detail' element={<Detail />} />
 
                 <Route path='/admin-dashboard' element={<AdminDashboard />} />
+                <Route path='/forgot-password' element={<FormFogotPassword />} />
             </Routes>
         );
     }
