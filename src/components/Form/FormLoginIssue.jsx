@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { login } from '../../redux/actions/loginAction'
 import LoadingFlag from '../LoadingFlag/LoadingFlag'
+import toastr from 'toastr';
+import 'toastr/build/toastr.css';
 import styles from "./Form.module.css"
 import logo from "./../../asset/img/logo-leanway.png"
 
@@ -22,13 +24,21 @@ const FormLoginIssue = () => {
     const handleSubmit = e => {
         e.preventDefault();
         setIsLoading(true);
-        dispatch(login(username, password)).then(() => {
+        if (validate()) {
+            dispatch(login(username, password)).then(() => {
+                setIsLoading(false);
+                navigate("/issue-dashboard");
+            })
+        } else {
+            toastr.warning("Tài khoản hoặc mật khẩu không được để trống");
             setIsLoading(false);
-            navigate("/issue-dashboard");
-            console.log(data.isAuthenticated);
-        })
+        }
+
     };
-    
+
+    function validate() {
+        return username !== "" || password !== "";
+    }
 
     return (
         <div>
@@ -40,14 +50,14 @@ const FormLoginIssue = () => {
                 </div>
                 <div className="form-group">
                     <input type="text" maxLength={50}
-                        
+
                         value={username} onChange={e => setUsername(e.target.value)} className={styles.formStyle} placeholder="ID*" />
                     <i className={`${styles.inputIcon} uil uil-at`}></i>
                 </div>
                 <div className="form-group mt-2" >
                     <input type="password" maxLength={50}
-                         pattern=".{4,}"
-                        value={password} onChange={e => setPassword(e.target.value)} className={styles.formStyle} placeholder="Mật khẩu*"  title="Mật khẩu phải có ít nhất 4 ký tự" />
+                        pattern=".{4,}"
+                        value={password} onChange={e => setPassword(e.target.value)} className={styles.formStyle} placeholder="Mật khẩu*" title="Mật khẩu phải có ít nhất 4 ký tự" />
                     <i className={`${styles.inputIcon} uil uil-lock-alt`}></i>
                 </div>
                 <button type='submit' className={`${styles.btn} mt-4`} name='submit'>Đăng nhập</button>
