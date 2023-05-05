@@ -1,12 +1,16 @@
-import Button from '@mui/material/Button'
-import AddIcon from '@mui/icons-material/Add';
+import * as React from 'react';
+import Button from '@mui/material/Button';
+import DeleteIcon from '@mui/icons-material/Delete';
+import SendIcon from '@mui/icons-material/Send';
+import Stack from '@mui/material/Stack';
 
-function ButtonAdd(){
-    return(
-        <div><Button variant='contained' endIcon={<AddIcon/>}>123
-            
-            </Button>
-        </div>
-    )
+export default function AddCategory() {
+  return (
+    <Stack direction="row" spacing={2}>
+      <Button variant="outlined" startIcon={<DeleteIcon />}>
+        AddCategory
+      </Button>
+      
+    </Stack>
+  );
 }
-export default ButtonAdd

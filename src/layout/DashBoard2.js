@@ -20,35 +20,22 @@ import { mainListItems, secondaryListItems } from "./listItems";
 
 import logo from "../asset/img/logo-leanway.png";
 
-import MyComponent from "../components/Table/TableIssue";
+import { Report } from "../components/Table/TableIssue";
 import { useState } from "react";
 import Stack from "@mui/material/Stack";
 import { LineGraph } from "../components/Chart/LineChart";
 import { PieChart } from "../components/Chart/PieChart";
-import {VerticalChart} from "../components/Chart/VerticalChart"
+import { VerticalChart } from "../components/Chart/VerticalChart"
 import TableAler from "../components/TableAler/Aler";
 import StepsModal from "../components/Form/DemoModal";
+import Tags from "../components/Combobox/CMBPhongBan";
+import DateTo from "../components/TimePicker/DateTo";
+import { Padding } from "@mui/icons-material";
 
 
 
 
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -148,59 +135,46 @@ function DashboardContent() {
         <Box
           component="main"
           sx={{
-
             backgroundColor: 'white',
             flexGrow: 1,
             height: "100vh",
             overflow: "auto",
             marginLeft: "10px",
             marginRight: '10px'
-
           }}
         >
+
           <Stack
             sx={{
               height: "auto",
               backgroundColor: 'white',
             }}
           >
-            <TableAler></TableAler>
-            <Button onClick={openModal} variant="contained" color="success" startIcon={<AddCircleOutlineIcon sx={{ fontSize: "60px", width: "60px", height: "60px", marginBottom: "8px" }} />}
-              sx={{
-                marginBottom: '10px',
 
-              }}>
-              <h2 >Thêm hệ giám sát</h2>
-            </Button>
+            <TableAler></TableAler>
+            <Tags></Tags>
             <Box sx={{
-              border: '1.5px groove',
-              backgroundColor: '#f9f9f9'
+              backgroundColor: '#f9f9f9',
+              margin: '10px 0px',
+              height: '70px',
+
+
             }}>
-              <StepsModal
-                isOpen={modalIsOpen}
-                onClose={() => {
-                  setModalIsOpen(false);
-                }}
-              />
-            </Box>
-            {/* <MyComponent></MyComponent> */}
-            <Box>
               <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                <Grid item xs={6}>
-                  <LineGraph></LineGraph>
+                <Grid item xs={2}>
+                  <DateTo sx={{
+                  }}></DateTo>
                 </Grid>
-                <Grid item xs={6}>
-                  <PieChart></PieChart>
+                <Grid item xs={9}>
+                  <DateTo sx={{ paddingTop: '50px' }}></DateTo>
                 </Grid>
-                <Grid item xs={6}>
-                  <PieChart></PieChart>
+                <Grid item xs={1}>
+                  <Button sx={{height:'63px',backgroundColor:'green',}}>Tìm kiếm</Button>
                 </Grid>
-                <Grid item xs={6}>
-                  <VerticalChart></VerticalChart>
-                </Grid>
-                
               </Grid>
             </Box>
+            <Report></Report>
+
 
 
           </Stack>
@@ -210,6 +184,6 @@ function DashboardContent() {
   );
 }
 
-export default function Dashboard() {
+export default function Dashboard2() {
   return <DashboardContent />;
 }

@@ -22,7 +22,7 @@ const IssueDashboard = () => {
     return (
         <div>
             <Dashboard/>
-            <button onClick={()=>handleClick()}>Đăng xuất</button>
+            {/* <button onClick={()=>handleClick()}>Đăng xuất</button> */}
         </div>
 
     )

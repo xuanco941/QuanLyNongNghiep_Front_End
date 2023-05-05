@@ -1,8 +1,11 @@
+import { Dashboard } from '@mui/icons-material'
 import React from 'react'
+import Dashboard2 from '../../layout/DashBoard2'
+
 
 const Detail = () => {
     return (
-        <div>Detail</div>
+        <Dashboard2></Dashboard2>
     )
 }
 

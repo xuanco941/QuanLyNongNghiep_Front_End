@@ -10,6 +10,9 @@ import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
 import AssignmentIcon from '@mui/icons-material/Assignment';
 import { Link } from 'react-router-dom';
+import ElectricMeterIcon from '@mui/icons-material/ElectricMeter';
+import LogoutIcon from '@mui/icons-material/Logout';
+
 
 export const mainListItems = (
     <React.Fragment>
@@ -17,7 +20,7 @@ export const mainListItems = (
             <ListItemIcon>
                 <DashboardIcon />
             </ListItemIcon>
-            <ListItemText primary="Trang chủ" ></ListItemText>
+            <ListItemText primary="Màn hình giám sát" ></ListItemText>
         </ListItemButton>
 
 
@@ -26,7 +29,14 @@ export const mainListItems = (
             <ListItemIcon>
                 <BarChartIcon />
             </ListItemIcon>
-            <ListItemText primary="Reports" />
+            <ListItemText primary="Báo cáo"/>
+        </ListItemButton>
+
+        <ListItemButton component={Link} to='/Detail'>
+            <ListItemIcon>
+                <ElectricMeterIcon />
+            </ListItemIcon>
+            <ListItemText primary="Quản lý năng lượng"/>
         </ListItemButton>
     </React.Fragment>
 );
@@ -38,9 +48,9 @@ export const secondaryListItems = (
         </ListSubheader>
         <ListItemButton>
             <ListItemIcon>
-                <AssignmentIcon/>
+                <LogoutIcon/>
             </ListItemIcon>
-            <ListItemText primary="Current month"/>
+            <ListItemText primary="Đăng xuất"/>
         </ListItemButton>
     </React.Fragment>
 );
