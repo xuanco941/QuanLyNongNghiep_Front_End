@@ -1,19 +1,19 @@
 
 
 import React, { useState } from 'react'
-import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
-import styles from './Form.module.css'
+import styles from './../Form.module.css'
 import toastr from 'toastr';
 import 'toastr/build/toastr.css';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { styled } from '@mui/material/styles';
 import { Button, TextField } from '@mui/material';
-import LoadingFlag from '../LoadingFlag/LoadingFlag'
+
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import forgot from '../../redux/actions/forgotPasswordAction';
+import forgot from '../../../redux/actions/forgotPasswordAction';
+import LoadingFlag from '../../LoadingFlag';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',

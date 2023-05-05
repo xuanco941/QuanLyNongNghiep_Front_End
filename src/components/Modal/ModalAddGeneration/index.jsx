@@ -3,11 +3,11 @@ import Modal from "react-modal";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Autocomplete from '@mui/material/Autocomplete';
-import IconComponent from "../Icon/IconComponent";
-import FormAddSensor from "./FormAddSensor";
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
+import IconComponent from "../../Icon/IconComponent";
+import FormAddSensor from "../../Form/FormAddSensor";
 //test
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -18,7 +18,7 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
 }));
 
-const StepsModal = ({ isOpen, onClose }) => {
+const ModalAddGeneration = ({ isOpen, onClose }) => {
     const [step, setStep] = useState(1);
 
     const handleNextStep = () => {
@@ -143,4 +143,4 @@ const StepsModal = ({ isOpen, onClose }) => {
     );
 };
 
-export default StepsModal;
+export default ModalAddGeneration;

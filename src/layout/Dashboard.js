@@ -7,49 +7,18 @@ import Button from '@mui/material/Button';
 import MuiAppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
-import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
-import Badge from '@mui/material/Badge';
-import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Link from '@mui/material/Link';
-import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems, secondaryListItems } from './listItems';
 import Header from './Header';
 import logo from "../asset/img/logo-leanway.png"
-import { ComboboxPhongban, ComboboxMaduan } from '../components/Combobox/Combobox';
-import Tags from '../components/Combobox/CMBPhongBan';
-import MyComponent from '../components/Table/TableIssue';
 import { useState } from 'react';
 import Stack from '@mui/material/Stack'
-import { LineGraph } from '../components/Chart/LineChart'
-import In4 from '../components/HMI/in4';
-import BasicCard from '../components/Box/CardHMI';
-import ButtonAdd from '../components/Button/Button';
-import DateTimePickerValue from '../components/TimePicker/DateTo'
-import FirstComponent from '../components/TimePicker/DateTo';
-import DeviceList from '../components/HMI/in4';
-import DatePicker from '../components/TimePicker/DateTo';
-import TableAler from '../components/TableAler/Aler';
-import StepsModal from '../components/Form/DemoModal';
-import MyButton from '../components/Icon/IconComponent';
+import ModalAddGeneration from '../components/Modal/ModalAddGeneration';
 
-function Copyright(props) {
-    return (
-        <Typography variant="body2" color="text.secondary" align="center" {...props}>
-            {'Copyright © '}
-            <Link color="inherit" href="https://mui.com/">
-                Your Website
-            </Link>{' '}
-            {new Date().getFullYear()}
-            {'.'}
-        </Typography>
-    );
-}
+
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -98,11 +67,6 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 const mdTheme = createTheme();
 
 function DashboardContent() {
-    const [upNumber, setUpNumber] = useState(0)
-    const handleUpNumber = () => {
-        setUpNumber(upNumber + 1)
-    }
-
     const [open, setOpen] = React.useState(true);
     const [logoVisible, setLogoVisible] = React.useState(true);
     const toggleDrawer = () => {
@@ -114,16 +78,9 @@ function DashboardContent() {
         setModalIsOpen(true);
     };
 
-
-
-    //Test thêm cb
-
-    
-    //endtest
     return (
 
         <ThemeProvider theme={mdTheme}>
-
             <Box sx={{ display: 'flex' }}>
                 <CssBaseline />
                 <AppBar position="absolute" open={open}>
@@ -137,7 +94,7 @@ function DashboardContent() {
                             px: [1],
                         }}
                     >
-                        {logoVisible && <img src={logo} width={180} />}
+                        {logoVisible && <img alt='' src={logo} width={180} />}
                         <IconButton onClick={toggleDrawer}>
                             <ChevronLeftIcon />
                         </IconButton>
@@ -172,7 +129,7 @@ function DashboardContent() {
                         <Button onClick={openModal} variant="contained" color="success">
                             Thêm hệ giám sát
                         </Button>
-                        <StepsModal
+                        <ModalAddGeneration
                             isOpen={modalIsOpen}
                             onClose={() => setModalIsOpen(false)}
                         />

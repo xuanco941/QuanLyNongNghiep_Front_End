@@ -1,25 +1,22 @@
-
-import React, { useState, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { login } from '../../redux/actions/loginAction'
-import LoadingFlag from '../LoadingFlag/LoadingFlag'
+import {login} from './../../../redux/actions/loginAction'
+import styles from './../Form.module.css'
 import toastr from 'toastr';
 import 'toastr/build/toastr.css';
-import styles from "./Form.module.css"
-import logo from "./../../asset/img/logo-leanway.png"
+import logo from "./../../../asset/img/logo-leanway.png"
+import LoadingFlag from '../../LoadingFlag'
+
 
 
 const FormLoginIssue = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [isLoading, setIsLoading] = useState(false);
-    const data = useSelector(state => state.login);
-    // const history = useHistory();
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const token = localStorage.getItem('token');
 
     const handleSubmit = e => {
         e.preventDefault();

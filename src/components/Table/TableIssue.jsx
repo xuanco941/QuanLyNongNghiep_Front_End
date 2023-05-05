@@ -4,21 +4,16 @@ import TableRow from '@mui/material/TableRow';
 import TableComponent from './Table';
 import StatusComponent from '../Status/StatusComponent';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function MyComponent() {
     const headers = ['Mã tài liệu', 'Người tạo', 'Thời gian tạo','Lần cuối sửa đổi', 'Trạng thái','Trạng thái',''];
     const data = [
         { id: 'LWM230100 - MTS', name: 'Nguyen Van A', created_time: '16/4/2023', updated_time:'17/4/2023', status:true },
-        { id: 'LWM230101 - VT', name: 'Nguyen Van A', created_time: '16/4/2023', updated_time:'17/4/2023', status:false },
-        
+        { id: 'LWM230101 - VT', name: 'Nguyen Van A', created_time: '16/4/2023', updated_time:'17/4/2023', status:false },    
     ];
-    const navigate = useNavigate();
-const handleClick = ()=>{
-    
-}
-    const renderRow = (item) => (
 
+    const renderRow = (item) => (
         <TableRow
             sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
         >

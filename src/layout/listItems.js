@@ -7,8 +7,8 @@ import ListSubheader from '@mui/material/ListSubheader';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import AssignmentIcon from '@mui/icons-material/Assignment';
-import  LogoutButton  from '../components/Logout/LogoutComponent';
 import { Link } from 'react-router-dom';
+import LogoutButton from '../components/Logout/Logout';
 
 export const mainListItems = (
     <React.Fragment>

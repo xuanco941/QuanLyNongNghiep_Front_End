@@ -1,6 +1,6 @@
 import { FORGOT_PASSWORD_SUCCESS, FORGOT_PASSWORD_FAILED } from '../constants/actionTypes';
 import axios from 'axios'
-import React from 'react'
+
 import toastr from 'toastr';
 import 'toastr/build/toastr.css';
 
@@ -15,7 +15,7 @@ const forgot = (username) => async dispatch => {
         });
 
         const data = response.data;
-        if (data.status == "success") {
+        if (data.status === "success") {
             dispatch({ type: FORGOT_PASSWORD_SUCCESS, payload: data });
             toastr.success(data.message);
         } else {

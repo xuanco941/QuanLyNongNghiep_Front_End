@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { IconButton, Dialog, DialogTitle, DialogContent, DialogActions } from '@mui/material';
-import { Delete, Edit, Close } from '@mui/icons-material';
+import {  Close } from '@mui/icons-material';
 import AddToPhotosIcon from '@mui/icons-material/AddToPhotos';
-import styles from "./index.module.css";
 
 function IconComponent() {
     const [showIconPanel, setShowIconPanel] = useState(false);
