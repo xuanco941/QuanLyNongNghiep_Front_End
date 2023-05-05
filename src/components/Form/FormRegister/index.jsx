@@ -3,10 +3,11 @@ import { useState } from 'react'
 import {  useDispatch } from 'react-redux'
 import toastr from 'toastr';
 import 'toastr/build/toastr.css';
-import LoadingFlag from '../LoadingFlag/LoadingFlag'
-import styles from "./Form.module.css"
-import logo from "./../../asset/img/logo-leanway.png"
-import { register } from '../../redux/actions/registerAction'
+import styles from "./../Form.module.css"
+import logo from "./../../../asset/img/logo-leanway.png"
+
+import { register } from './../../../redux/actions/registerAction'
+import LoadingFlag from '../../LoadingFlag';
 
 
 const FormRegister = () => {

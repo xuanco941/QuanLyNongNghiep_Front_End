@@ -1,54 +1,24 @@
-import * as React from "react";
-import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import MuiDrawer from "@mui/material/Drawer";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import MuiAppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import List from "@mui/material/List";
-import Typography from "@mui/material/Typography";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import AddCategory from "../components/Button/Button"
-import Container from "@mui/material/Container";
-import Grid from "@mui/material/Grid";
-import Link from "@mui/material/Link";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import { mainListItems, secondaryListItems } from "./listItems";
-
-import logo from "../asset/img/logo-leanway.png";
-
-import MyComponent from "../components/Table/TableIssue";
-import { useState } from "react";
-import Stack from "@mui/material/Stack";
-import { LineGraph } from "../components/Chart/LineChart";
-import { PieChart } from "../components/Chart/PieChart";
-import {VerticalChart} from "../components/Chart/VerticalChart"
-import TableAler from "../components/TableAler/Aler";
-import StepsModal from "../components/Form/DemoModal";
+import * as React from 'react';
+import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import MuiDrawer from '@mui/material/Drawer';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import MuiAppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import List from '@mui/material/List';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import Grid from '@mui/material/Grid';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import { mainListItems, secondaryListItems } from './listItems';
+import Header from './Header';
+import logo from "../asset/img/logo-leanway.png"
+import { useState } from 'react';
+import Stack from '@mui/material/Stack'
+import ModalAddGeneration from '../components/Modal/ModalAddGeneration';
 
 
-
-
-function Copyright(props) {
-  return (
-    <Typography
-      variant="body2"
-      color="text.secondary"
-      align="center"
-      {...props}
-    >
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -97,91 +67,81 @@ const Drawer = styled(MuiDrawer, {
 const mdTheme = createTheme();
 
 function DashboardContent() {
-  const [upNumber, setUpNumber] = useState(0);
-  const handleUpNumber = () => {
-    setUpNumber(upNumber + 1);
-  };
+    const [open, setOpen] = React.useState(true);
+    const [logoVisible, setLogoVisible] = React.useState(true);
+    const toggleDrawer = () => {
+        setOpen(!open);
+        setLogoVisible(!logoVisible);
+    };
+    const [modalIsOpen, setModalIsOpen] = useState(false);
+    const openModal = () => {
+        setModalIsOpen(true);
+    };
 
-  const [open, setOpen] = React.useState(true);
-  const [logoVisible, setLogoVisible] = React.useState(true);
-  const toggleDrawer = () => {
-    setOpen(!open);
-    setLogoVisible(!logoVisible);
-  };
+    return (
 
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const openModal = () => {
-    setModalIsOpen(true);
-  };
+        <ThemeProvider theme={mdTheme}>
+            <Box sx={{ display: 'flex' }}>
+                <CssBaseline />
+                <AppBar position="absolute" open={open}>
+                </AppBar>
+                <Drawer variant="permanent" open={open}>
+                    <Toolbar
+                        sx={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'flex-end',
+                            px: [1],
+                        }}
+                    >
+                        {logoVisible && <img alt='' src={logo} width={180} />}
+                        <IconButton onClick={toggleDrawer}>
+                            <ChevronLeftIcon />
+                        </IconButton>
+                    </Toolbar>
+                    <Divider />
+                    <List component="nav">
+                        {mainListItems}
+                        <Divider sx={{ my: 1 }} />
+                        {secondaryListItems}
+                    </List>
+                </Drawer>
+                <Box
+                    component="main"
+                    sx={{
+                        backgroundColor: (theme) =>
+                            theme.palette.mode === 'light'
+                                ? theme.palette.grey[100]
+                                : theme.palette.grey[900],
+                        flexGrow: 1,
+                        height: '100vh',
+                        overflow: 'auto',
+                    }}
+                >
+                    <Header />
 
-  //Test thêm cb
+                    <Stack sx={{
+                        height: 'auto',
+                        backgroundColor: '#cdcdcd'
+                    }}>
 
-  //endtest
-  return (
-    <ThemeProvider theme={mdTheme}>
-      <Box sx={{ display: "flex", }}>
-        <CssBaseline />
-        <AppBar position="absolute" open={open}></AppBar>
-        <Drawer variant="permanent" open={open}>
-          <Toolbar
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              px: [1],
-              marginBottom: '17px',
-              paddingTop: '15px'
-            }}
-          >
-            {logoVisible && <img src={logo} width={180} />}
-            <IconButton onClick={toggleDrawer}>
-              <ChevronLeftIcon />
-            </IconButton>
-          </Toolbar>
-          <Divider />
-          <List component="nav">
-            {mainListItems}
-            <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
-          </List>
-        </Drawer>
-        <Box
-          component="main"
-          sx={{
 
-            backgroundColor: 'white',
-            flexGrow: 1,
-            height: "100vh",
-            overflow: "auto",
-            marginLeft: "10px",
-            marginRight: '10px'
+                        <Button onClick={openModal} variant="contained" color="success">
+                            Thêm hệ giám sát
+                        </Button>
+                        <ModalAddGeneration
+                            isOpen={modalIsOpen}
+                            onClose={() => setModalIsOpen(false)}
+                        />
+                        
+                        <Grid>
 
-          }}
-        >
-          <Stack
-            sx={{
-              height: "auto",
-              backgroundColor: 'white',
-            }}
-          >
-            <TableAler></TableAler>
-            <Button onClick={openModal} variant="contained" color="success" startIcon={<AddCircleOutlineIcon sx={{ fontSize: "60px", width: "60px", height: "60px", marginBottom: "8px" }} />}
-              sx={{
-                marginBottom: '10px',
+                        </Grid>
 
-              }}>
-              <h2 >Thêm hệ giám sát</h2>
-            </Button>
-            <Box sx={{
-              border: '1.5px groove',
-              backgroundColor: '#f9f9f9'
-            }}>
-              <StepsModal
-                isOpen={modalIsOpen}
-                onClose={() => {
-                  setModalIsOpen(false);
-                }}
-              />
+
+                    </Stack>
+
+                </Box>
             </Box>
             {/* <MyComponent></MyComponent> */}
             <Box>

@@ -22,11 +22,8 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const StepsModal = ({ isOpen, onClose }) => {
-  const [step, setStep] = useState(1);
-  const [componentCount, setComponentCount] = useState(1);
-  const [object, setObject] = useState("");
-  const [temp, setTemp] = useState("");
+const ModalAddGeneration = ({ isOpen, onClose }) => {
+    const [step, setStep] = useState(1);
 
   const [device, setDevices] = useState([
     {
@@ -288,4 +285,4 @@ const StepsModal = ({ isOpen, onClose }) => {
   );
 };
 
-export default StepsModal;
+export default ModalAddGeneration;
