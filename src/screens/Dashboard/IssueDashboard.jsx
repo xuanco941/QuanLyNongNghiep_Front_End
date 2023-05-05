@@ -4,6 +4,7 @@ const IssueDashboard = () => {
     return (
         <div>
             <Dashboard/>
+            {/* <button onClick={()=>handleClick()}>Đăng xuất</button> */}
         </div>
 
     )

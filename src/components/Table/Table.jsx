@@ -24,6 +24,7 @@ export default function TableComponent({ headers, data, renderRow, ...rest }) {
                 </TableHead>
                 <TableBody>
                     
+                    
                         
                             {data.map((item) => renderRow(item))}
                             

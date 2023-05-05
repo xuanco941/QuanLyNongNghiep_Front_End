@@ -4,7 +4,9 @@ import { Grid, Card, CardContent, Typography, Button } from '@mui/material';
 const TableAler = () => {
     return (
         <Grid  >
-        <Card sx={{  marginBottom :'10px' }}  >
+        <Card sx={{  marginBottom :'10px',border: '1.5px groove',
+              backgroundColor:'#f9f9f9'
+     }}  >
             <CardContent sx={{ paddingBottom: '16px' }}>
                 <Grid container alignItems="center" justifyContent="space-between" >
                     <Grid item>
@@ -12,7 +14,7 @@ const TableAler = () => {
                     </Grid>
                     <Grid item>
                         <Button variant="contained" color="primary">
-                            Cảnh báo
+                            Bảng Cảnh báo
                         </Button>
                     </Grid>
                 </Grid>

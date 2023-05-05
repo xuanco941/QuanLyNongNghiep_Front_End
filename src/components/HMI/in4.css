@@ -1,5 +1,38 @@
-@media (max-width: 600px) {
-    .my-component {
-    
-    }
-  }
+.text-room {
+  font-weight:bold;
+  justify-content: center;
+  display: flex;
+  font-size: 60px;
+
+}
+
+.room {
+  border:solid white 2px;
+  border-radius: 20px;
+  width: 350px;
+  height: 100%;
+  background: rgb(140,198,63);
+  background: linear-gradient(180deg, rgba(140,198,63,1) 0%, rgba(31,143,187,1) 69%, rgba(0,212,255,1) 100%);
+  margin: 30px 30px;
+}
+
+.room-child {
+  border-radius:20px;
+  display:flex;
+  justify-content:space-between;
+  background-color: black;
+  margin: 10px;
+  color: #fff;
+ 
+}
+.NameSensor {
+  margin-left :10px;
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
+}
+.value {
+  margin-right :10px;
+  font-weight:bold;
+  font-size: 30px;
+}
