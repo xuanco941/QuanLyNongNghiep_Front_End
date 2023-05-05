@@ -27,10 +27,11 @@ import { LineGraph } from "../components/Chart/LineChart";
 import { PieChart } from "../components/Chart/PieChart";
 import { VerticalChart } from "../components/Chart/VerticalChart"
 import TableAler from "../components/TableAler/Aler";
-import StepsModal from "../components/Form/DemoModal";
+
 import Tags from "../components/Combobox/CMBPhongBan";
 import DateTo from "../components/TimePicker/DateTo";
 import { Padding } from "@mui/icons-material";
+import DateEnd from "../components/TimePicker/DateEnd";
 
 
 
@@ -162,14 +163,16 @@ function DashboardContent() {
             }}>
               <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                 <Grid item xs={2}>
-                  <DateTo sx={{
-                  }}></DateTo>
+                  <DateTo ></DateTo>
                 </Grid>
-                <Grid item xs={9}>
-                  <DateTo sx={{ paddingTop: '50px' }}></DateTo>
+                <Grid item xs={8}>
+                  <DateEnd ></DateEnd>
                 </Grid>
                 <Grid item xs={1}>
-                  <Button sx={{height:'63px',backgroundColor:'green',}}>Tìm kiếm</Button>
+                  <Button variant="contained" sx={{height:'63px',fontWeight:'Bold'}}>Xuất Excel</Button>
+                </Grid>
+                <Grid item xs={1}>
+                  <Button variant="contained" sx={{height:'63px',fontWeight:'Bold'}}>Tìm kiếm</Button>
                 </Grid>
               </Grid>
             </Box>

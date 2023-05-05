@@ -4,7 +4,7 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import { TextField } from '@mui/material';
 
-export default function DateTo() {
+export default function DateEnd() {
   const [selectedDate, setSelectedDate] = React.useState(null);
 
   const handleDateChange = (date) => {
@@ -17,7 +17,7 @@ export default function DateTo() {
       <DatePicker
       
       
-        label="Từ ngày"
+        label="Đến ngày"
         value={selectedDate}
         onChange={handleDateChange}
         renderInput={(params) => <TextField {...params} />}

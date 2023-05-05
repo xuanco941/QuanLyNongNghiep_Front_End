@@ -1,100 +1,140 @@
-import * as React from 'react';
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-import MuiDrawer from '@mui/material/Drawer';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import MuiAppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import Grid from '@mui/material/Grid';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { mainListItems, secondaryListItems } from './listItems';
-import Header from './Header';
-import logo from "../asset/img/logo-leanway.png"
-import { useState } from 'react';
-import Stack from '@mui/material/Stack'
-import ModalAddGeneration from '../components/Modal/ModalAddGeneration';
+import * as React from "react";
+import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import MuiDrawer from "@mui/material/Drawer";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import MuiAppBar from "@mui/material/AppBar";
+import Toolbar from "@mui/material/Toolbar";
+import List from "@mui/material/List";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
+import AddCategory from "../components/Button/Button"
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Link from "@mui/material/Link";
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import { mainListItems, secondaryListItems } from "./listItems";
+
+import logo from "../asset/img/logo-leanway.png";
+
+import MyComponent from "../components/Table/TableIssue";
+import { useState } from "react";
+import Stack from "@mui/material/Stack";
+import { LineGraph } from "../components/Chart/LineChart";
+import { PieChart } from "../components/Chart/PieChart";
+import { VerticalChart } from "../components/Chart/VerticalChart"
+import TableAler from "../components/TableAler/Aler";
+import ModalAddGeneration from "../components/Modal/ModalAddGeneration";
 
 
+
+
+
+function Copyright(props) {
+    return (
+        <Typography
+            variant="body2"
+            color="text.secondary"
+            align="center"
+            {...props}
+        >
+            {"Copyright © "}
+            <Link color="inherit" href="https://mui.com/">
+                Your Website
+            </Link>{" "}
+            {new Date().getFullYear()}
+            {"."}
+        </Typography>
+    );
+}
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
-  shouldForwardProp: (prop) => prop !== "open",
+    shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
-  zIndex: theme.zIndex.drawer + 1,
-  transition: theme.transitions.create(["width", "margin"], {
-    easing: theme.transitions.easing.sharp,
-    duration: theme.transitions.duration.leavingScreen,
-  }),
-  ...(open && {
-    marginLeft: drawerWidth,
-    width: `calc(100% - ${drawerWidth}px)`,
+    zIndex: theme.zIndex.drawer + 1,
     transition: theme.transitions.create(["width", "margin"], {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen,
     }),
-  }),
+    ...(open && {
+        marginLeft: drawerWidth,
+        width: `calc(100% - ${drawerWidth}px)`,
+        transition: theme.transitions.create(["width", "margin"], {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.enteringScreen,
+        }),
+    }),
 }));
 
 const Drawer = styled(MuiDrawer, {
-  shouldForwardProp: (prop) => prop !== "open",
+    shouldForwardProp: (prop) => prop !== "open",
 })(({ theme, open }) => ({
-  "& .MuiDrawer-paper": {
-    position: "relative",
-    whiteSpace: "nowrap",
-    width: drawerWidth,
-    transition: theme.transitions.create("width", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    boxSizing: "border-box",
-    ...(!open && {
-      overflowX: "hidden",
-      transition: theme.transitions.create("width", {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      }),
-      width: theme.spacing(6),
-      [theme.breakpoints.up("sm")]: {
-        width: theme.spacing(7),
-      },
-    }),
-  },
+    "& .MuiDrawer-paper": {
+        position: "relative",
+        whiteSpace: "nowrap",
+        width: drawerWidth,
+        transition: theme.transitions.create("width", {
+            easing: theme.transitions.easing.sharp,
+            duration: theme.transitions.duration.enteringScreen,
+        }),
+        boxSizing: "border-box",
+        ...(!open && {
+            overflowX: "hidden",
+            transition: theme.transitions.create("width", {
+                easing: theme.transitions.easing.sharp,
+                duration: theme.transitions.duration.leavingScreen,
+            }),
+            width: theme.spacing(6),
+            [theme.breakpoints.up("sm")]: {
+                width: theme.spacing(7),
+            },
+        }),
+    },
 }));
 const mdTheme = createTheme();
 
 function DashboardContent() {
+    const [upNumber, setUpNumber] = useState(0);
+    const handleUpNumber = () => {
+        setUpNumber(upNumber + 1);
+    };
+
     const [open, setOpen] = React.useState(true);
     const [logoVisible, setLogoVisible] = React.useState(true);
     const toggleDrawer = () => {
         setOpen(!open);
         setLogoVisible(!logoVisible);
     };
+
     const [modalIsOpen, setModalIsOpen] = useState(false);
     const openModal = () => {
         setModalIsOpen(true);
     };
 
-    return (
+    //Test thêm cb
 
+    //endtest
+    return (
         <ThemeProvider theme={mdTheme}>
-            <Box sx={{ display: 'flex' }}>
+            <Box sx={{ display: "flex", }}>
                 <CssBaseline />
-                <AppBar position="absolute" open={open}>
-                </AppBar>
+                <AppBar position="absolute" open={open}></AppBar>
                 <Drawer variant="permanent" open={open}>
                     <Toolbar
                         sx={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'flex-end',
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "flex-end",
                             px: [1],
+                            marginBottom: '17px',
+                            paddingTop: '15px'
                         }}
                     >
-                        {logoVisible && <img alt='' src={logo} width={180} />}
+                        {logoVisible && <img src={logo} width={180} />}
                         <IconButton onClick={toggleDrawer}>
                             <ChevronLeftIcon />
                         </IconButton>
@@ -109,67 +149,68 @@ function DashboardContent() {
                 <Box
                     component="main"
                     sx={{
-                        backgroundColor: (theme) =>
-                            theme.palette.mode === 'light'
-                                ? theme.palette.grey[100]
-                                : theme.palette.grey[900],
+
+                        backgroundColor: 'white',
                         flexGrow: 1,
-                        height: '100vh',
-                        overflow: 'auto',
+                        height: "100vh",
+                        overflow: "auto",
+                        marginLeft: "10px",
+                        marginRight: '10px'
+
                     }}
                 >
-                    <Header />
+                    <Stack
+                        sx={{
+                            height: "auto",
+                            backgroundColor: 'white',
+                        }}
+                    >
+                        <TableAler></TableAler>
+                        <Button onClick={openModal} variant="contained" color="success" startIcon={<AddCircleOutlineIcon sx={{ fontSize: "60px", width: "60px", height: "60px", marginBottom: "8px", }} />}
+                            sx={{
+                                marginBottom: '10px',
 
-                    <Stack sx={{
-                        height: 'auto',
-                        backgroundColor: '#cdcdcd'
-                    }}>
-
-
-                        <Button onClick={openModal} variant="contained" color="success">
-                            Thêm hệ giám sát
+                            }}>
+                            <h2 >Thêm hệ giám sát</h2>
                         </Button>
-                        <ModalAddGeneration
-                            isOpen={modalIsOpen}
-                            onClose={() => setModalIsOpen(false)}
-                        />
-                        
-                        <Grid>
+                        <Box sx={{
+                            border: '1.5px groove',
+                            backgroundColor: '#f9f9f9'
+                        }}>
+                            <ModalAddGeneration
+                                isOpen={modalIsOpen}
+                                onClose={() => {
+                                    setModalIsOpen(false);
+                                }}
+                            />
+                        </Box>
+                        {/* <MyComponent></MyComponent> */}
+                        <Box>
+                            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+                                <Grid item xs={6}>
+                                    <LineGraph></LineGraph>
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <PieChart></PieChart>
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <PieChart></PieChart>
+                                </Grid>
+                                <Grid item xs={6}>
+                                    <VerticalChart></VerticalChart>
+                                </Grid>
 
-                        </Grid>
+                            </Grid>
+                        </Box>
 
 
                     </Stack>
-
                 </Box>
             </Box>
-            {/* <MyComponent></MyComponent> */}
-            <Box>
-              <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                <Grid item xs={6}>
-                  <LineGraph></LineGraph>
-                </Grid>
-                <Grid item xs={6}>
-                  <PieChart></PieChart>
-                </Grid>
-                <Grid item xs={6}>
-                  <PieChart></PieChart>
-                </Grid>
-                <Grid item xs={6}>
-                  <VerticalChart></VerticalChart>
-                </Grid>
-                
-              </Grid>
-            </Box>
-
-
-          </Stack>
-        </Box>
-      </Box>
-    </ThemeProvider>
-  );
-}
+        </ThemeProvider>
+    );
+}   
 
 export default function Dashboard() {
-  return <DashboardContent />;
+    return <DashboardContent />;
 }

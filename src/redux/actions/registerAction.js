@@ -22,7 +22,7 @@ export const register = (fullName, userName, email, phoneNumber,address ) => asy
         if (data.status == "success") {
             
             dispatch({ type: REGISTER_SUCCESS, payload: data});
-            //console.log(data);
+            //console.log(data);    
             toastr.success(data.message);
         } else {
             console.log(data);

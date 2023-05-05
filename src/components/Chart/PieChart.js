@@ -12,7 +12,7 @@ const option = {
     plugins: {
         title: {
             display:true,
-            text: "Biểu đồ đường nhiệt độ ",
+            text: "Biểu đồ tròn nhiệt độ ",
             font: {
                 family: "Montserrat" ,
                 size :20
@@ -23,10 +23,10 @@ const option = {
     }
 };
 export const data = {
-  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+  labels: ['Hệ 1', 'Hệ 2', 'Hệ 3', 'Hệ 4', 'Hệ 5', 'Hệ 6'],
   datasets: [
     {
-      label: '# of Votes',
+      label: 'Nhiệt độ',
       data: [12, 19, 3, 5, 2, 3],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
@@ -57,7 +57,7 @@ export function PieChart() {
                     height:'300px'
                 }}>
                     <Pie data={data}
-  options={option} />;
+  options={option} />
                 </CardContent>
             </Card>
         </React.Fragment> 

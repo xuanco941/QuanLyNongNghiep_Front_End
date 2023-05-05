@@ -13,7 +13,7 @@ const TableAler = () => {
                         <Typography variant="h4" color='red' >07/03/2023 - 10:17:32 AM : Nhiệt độ hệ 2 vượt quá mức tiêu chuẩn</Typography>
                     </Grid>
                     <Grid item>
-                        <Button variant="contained" color="primary">
+                        <Button variant="contained" color="primary" sx={{height:'63px',fontWeight:'Bold'}}>
                             Bảng Cảnh báo
                         </Button>
                     </Grid>
