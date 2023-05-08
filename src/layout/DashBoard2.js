@@ -10,7 +10,7 @@ import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import AddCategory from "../components/Button/Button"
+
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
@@ -20,15 +20,15 @@ import { mainListItems, secondaryListItems } from "./listItems";
 
 import logo from "../asset/img/logo-leanway.png";
 
-import { Report } from "../components/Table/TableIssue";
+import { Report } from "../components/Table/";
 import { useState } from "react";
 import Stack from "@mui/material/Stack";
 import { LineGraph } from "../components/Chart/LineChart";
 import { PieChart } from "../components/Chart/PieChart";
 import { VerticalChart } from "../components/Chart/VerticalChart"
-import TableAler from "../components/TableAler/Aler";
+import TableAler from "../components/TableAler/index";
 
-import Tags from "../components/Combobox/CMBPhongBan";
+import Tags from "../components/Combobox/";
 import DateTo from "../components/TimePicker/DateTo";
 import { Padding } from "@mui/icons-material";
 import DateEnd from "../components/TimePicker/DateEnd";

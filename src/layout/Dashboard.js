@@ -10,7 +10,7 @@ import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import AddCategory from "../components/Button/Button"
+
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
@@ -20,13 +20,13 @@ import { mainListItems, secondaryListItems } from "./listItems";
 
 import logo from "../asset/img/logo-leanway.png";
 
-import MyComponent from "../components/Table/TableIssue";
+import MyComponent from "../components/Table/";
 import { useState } from "react";
 import Stack from "@mui/material/Stack";
-import { LineGraph } from "../components/Chart/LineChart";
+import { LineChart } from "../components/Chart/LineChart";
 import { PieChart } from "../components/Chart/PieChart";
 import { VerticalChart } from "../components/Chart/VerticalChart"
-import TableAler from "../components/TableAler/Aler";
+import TableAler from "../components/TableAler/";
 import ModalAddGeneration from "../components/Modal/ModalAddGeneration";
 
 
@@ -188,7 +188,7 @@ function DashboardContent() {
                         <Box>
                             <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                                 <Grid item xs={6}>
-                                    <LineGraph></LineGraph>
+                                    <LineChart></LineChart>
                                 </Grid>
                                 <Grid item xs={6}>
                                     <PieChart></PieChart>

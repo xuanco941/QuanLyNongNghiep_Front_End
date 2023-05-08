@@ -15,7 +15,7 @@ import TextField from "@mui/material/TextField";
 
 
 
-import DeviceInfo from "./../../HMI/in4";
+import DeviceInfo from "./../../HMI/DeviceInfo/index";
 
 
 //test
