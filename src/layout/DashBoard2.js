@@ -14,7 +14,7 @@ import IconButton from "@mui/material/IconButton";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { mainListItems, secondaryListItems } from "./listItems";
 
@@ -25,17 +25,13 @@ import { useState } from "react";
 import Stack from "@mui/material/Stack";
 import { LineGraph } from "../components/Chart/LineChart";
 import { PieChart } from "../components/Chart/PieChart";
-import { VerticalChart } from "../components/Chart/VerticalChart"
+import { VerticalChart } from "../components/Chart/VerticalChart";
 import TableAler from "../components/TableAler/index";
 
 import Tags from "../components/Combobox/";
 import DateTo from "../components/TimePicker/DateTo";
 import { Padding } from "@mui/icons-material";
 import DateEnd from "../components/TimePicker/DateEnd";
-
-
-
-
 
 const drawerWidth = 240;
 
@@ -107,9 +103,9 @@ function DashboardContent() {
   //endtest
   return (
     <ThemeProvider theme={mdTheme}>
-      <Box sx={{ display: "flex", }}>
+      <Box sx={{ display: "flex" , width:"100%"}}>
         <CssBaseline />
-        <AppBar position="absolute" open={open}></AppBar>
+        {/* <AppBar position="absolute" open={open}></AppBar>
         <Drawer variant="permanent" open={open}>
           <Toolbar
             sx={{
@@ -132,54 +128,63 @@ function DashboardContent() {
             <Divider sx={{ my: 1 }} />
             {secondaryListItems}
           </List>
-        </Drawer>
+        </Drawer> */}
         <Box
           component="main"
           sx={{
-            backgroundColor: 'white',
+            backgroundColor: "white",
             flexGrow: 1,
             height: "100vh",
             overflow: "auto",
             marginLeft: "10px",
-            marginRight: '10px'
+            marginRight: "10px",
           }}
         >
-
           <Stack
             sx={{
               height: "auto",
-              backgroundColor: 'white',
+              backgroundColor: "white",
             }}
           >
-
             <TableAler></TableAler>
             <Tags></Tags>
-            <Box sx={{
-              backgroundColor: '#f9f9f9',
-              margin: '10px 0px',
-              height: '70px',
-
-
-            }}>
-              <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
+            <Box
+              sx={{
+                backgroundColor: "#f9f9f9",
+                margin: "10px 0px",
+                height: "70px",
+              }}
+            >
+              <Grid
+                container
+                rowSpacing={1}
+                columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+              >
                 <Grid item xs={2}>
-                  <DateTo ></DateTo>
+                  <DateTo></DateTo>
                 </Grid>
                 <Grid item xs={8}>
-                  <DateEnd ></DateEnd>
+                  <DateEnd></DateEnd>
                 </Grid>
                 <Grid item xs={1}>
-                  <Button variant="contained" sx={{height:'63px',fontWeight:'Bold'}}>Xuất Excel</Button>
+                  <Button
+                    variant="contained"
+                    sx={{ height: "63px", fontWeight: "Bold" }}
+                  >
+                    Xuất Excel
+                  </Button>
                 </Grid>
                 <Grid item xs={1}>
-                  <Button variant="contained" sx={{height:'63px',fontWeight:'Bold'}}>Tìm kiếm</Button>
+                  <Button
+                    variant="contained"
+                    sx={{ height: "63px", fontWeight: "Bold" }}
+                  >
+                    Tìm kiếm
+                  </Button>
                 </Grid>
               </Grid>
             </Box>
             <Report></Report>
-
-
-
           </Stack>
         </Box>
       </Box>

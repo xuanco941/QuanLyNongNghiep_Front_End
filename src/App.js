@@ -1,35 +1,73 @@
-import React from 'react';
-import { Route, Routes, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
-import IssueDashboard from './screens/Dashboard/IssueDashboard/index';
-import AdminDashboard from './screens/Dashboard/AdminDashboard/index';
-import Detail from './screens/Detail/index';
-import Login from './screens/Login/Login';
-import FormFogotPassword from './components/Form/FormForgotPassword';
+import React, { Fragment } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import Detail from "./screens/Detail/index";
+import Main from "./screens/Main/index";
+import Login from "./screens/Login/Login";
+import DefaultLayout from "./components/DefaultLayout";
 
+function App() {
+  const token = localStorage.getItem("token");
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    if (!token) {
+      navigate("/");
+    }
+  }, []);
 
-    function App() {
-        const token = localStorage.getItem("token");
-        const navigate = useNavigate();
+  const pageArray = [
+    {
+      component: token ? <Main /> :<Login/>,
+      path: "/main",
+      layout: true,
+    },
+    {
+      component:  token ? <Main /> :<Login/>,
+      path: "/",
+      layout: token ? true : false,
+    },
+    {
+      component: <Detail />,
+      path: "/detail",
+      layout: true,
+    },
+  ];
 
-        useEffect(() => {
-            if (!token) {
-                navigate("/");
-            }
-        }, []);
+  return (
+    <div style={{ display: "flex", flexDirection: "row" }}>
+    <Routes>
+      {pageArray.map((page, index) => {
+        const LayoutTotal = page.component.type;
+        console.log("page.layout", !!page.layout);
+
+        let Layout;
+        if (page.layout === true) {
+          Layout = DefaultLayout;
+        } else if (page.layout === false) {
+          Layout = Fragment;
+        }
+        console.log("page.path", page.path);
 
         return (
-            <Routes>
-                <Route exact  path='/' element={token ? <IssueDashboard /> : <Login />} />
-                <Route path='/issue-dashboard' element={token ? <IssueDashboard /> : <Login />} />
-                <Route path='/detail' element={<Detail />} />
-                <Route path='/admin-dashboard' element={<AdminDashboard />} />
-                <Route path='/forgot-password' element={<FormFogotPassword />} />
-            </Routes>
+          
+          <>
+          
+            <Route
+              key={index}
+              path={page.path}
+              element={
+                <Layout>
+                  <LayoutTotal />
+                </Layout>
+              }
+            />
+          </>
         );
-    }
+      })}
+    </Routes>
+    </div>
+  );
+}
 
 export default App;
-
-

@@ -1,9 +1,10 @@
 import React from 'react'
 import Dashboard from '../../../layout/Dashboard';
+import Main from '../../Main';
 const IssueDashboard = () => {
     return (
         <div>
-            <Dashboard/>
+            <Main/>
             {/* <button onClick={()=>handleClick()}>Đăng xuất</button> */}
         </div>
 
