@@ -24,7 +24,7 @@ const FormLoginIssue = () => {
         if (validate()) {
             dispatch(login(username, password)).then(() => {
                 setIsLoading(false);
-                navigate("/issue-dashboard");
+                navigate("/main");
             })
         } else {
             toastr.warning("Tài khoản hoặc mật khẩu không được để trống");

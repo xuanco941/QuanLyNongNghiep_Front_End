@@ -31,7 +31,11 @@ const options = {
     },
     title: {
       display: true,
-      text: 'Chart.js Bar Chart',
+      text: 'Biểu đồ cột áp suất',
+      font: {
+        family: "Montserrat" ,
+        size :20
+      },
     },
   },
 };
@@ -42,12 +46,12 @@ const data = {
     labels,
     datasets: [
       {
-        label: 'Dataset 1',
+        label: 'Hệ 1',
         data: [200, 450, 600, 750, 800, 950, 1000],
         backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
       {
-        label: 'Dataset 2',
+        label: 'Hệ 2',
         data: [300, 550, 400, 600, 900, 850, 700],
         backgroundColor: 'rgba(53, 162, 235, 0.5)',
       },

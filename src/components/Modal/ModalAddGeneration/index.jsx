@@ -15,7 +15,7 @@ import TextField from "@mui/material/TextField";
 
 
 
-import DeviceInfo from "./../../HMI/in4";
+import DeviceInfo from "./../../HMI/DeviceInfo/index";
 
 
 //test
@@ -148,16 +148,16 @@ const ModalAddGeneration = ({ isOpen, onClose }) => {
                         />
                     </Item>
                     {/* <Item>
-                <Autocomplete
-                  disablePortal
-                  id="combo-box-demo"
-                  options={top100Films}
-                  sx={{ width: "100%" }}
-                  renderInput={(params) => (
-                    <TextField {...params} label="Chọn địa chỉ" />
-                  )}
-                />
-              </Item> */}
+                  <Autocomplete
+                    disablePortal
+                    id="combo-box-demo"
+                    options={top100Films}
+                    sx={{ width: "100%" }}
+                    renderInput={(params) => (
+                      <TextField {...params} label="Chọn địa chỉ" />
+                    )}
+                  />
+                </Item> */}
                 </Stack>
             </div>
         );
@@ -270,8 +270,7 @@ const ModalAddGeneration = ({ isOpen, onClose }) => {
                                 >
                                     Thêm cảm biến
                                 </Button>
-                                <Button
-                                    onClick={handlePreviousStep}
+                                <Button onClick={handlePreviousStep}
                                     sx={{ marginRight: "20px" }}
                                     variant="contained"
                                 >
@@ -284,12 +283,12 @@ const ModalAddGeneration = ({ isOpen, onClose }) => {
                                 >
                                     Hoàn thành
                                 </Button>
-                            </Item>
-                        </Stack>
-                    </div>
+                            </Item >
+                        </Stack >
+                    </div >
                 )}
-            </Modal>
-            <DeviceInfo prop={device}></DeviceInfo>
+            </Modal >
+    <DeviceInfo prop={device}></DeviceInfo>
         </>
     );
 };

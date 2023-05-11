@@ -2,7 +2,7 @@ import React from 'react';
 import TableCell from '@mui/material/TableCell';
 import TableRow from '@mui/material/TableRow';
 import TableComponent from './Table';
-import StatusComponent from '../Status/StatusComponent';
+import Status from '../Status/index';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { Link, useNavigate } from 'react-router-dom';
 import SummarizeSharpIcon from '@mui/icons-material/SummarizeSharp';

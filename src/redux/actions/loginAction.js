@@ -15,7 +15,7 @@ export const login = (username, password) => async dispatch => {
         });
         const data = response.data;
         if (data.status === 'success') {
-            
+            console.log(data);
             dispatch({ type: LOGIN, payload: data });           
             localStorage.setItem('token', data.data);
             toastr.success(data.message);

@@ -58,7 +58,7 @@ const data = {
           },
     ],
 };
-export const LineGraph = ()=>{
+export const LineChart = ()=>{
     return(
         <React.Fragment>
             <Card style={{backgroundColor:"#f9f9f9",marginTop:"10px",}}>
@@ -74,4 +74,4 @@ export const LineGraph = ()=>{
         </React.Fragment>
     )
 }
-export default LineGraph
+export default LineChart

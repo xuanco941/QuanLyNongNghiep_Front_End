@@ -10,28 +10,25 @@ import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import AddCategory from "../components/Button/Button"
+
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { mainListItems, secondaryListItems } from "./listItems";
 
 import logo from "../asset/img/logo-leanway.png";
 
-import MyComponent from "../components/Table/TableIssue";
+import MyComponent from "../components/Table/";
 import { useState } from "react";
 import Stack from "@mui/material/Stack";
-import { LineGraph } from "../components/Chart/LineChart";
+import { LineChart } from "../components/Chart/LineChart";
 import { PieChart } from "../components/Chart/PieChart";
-import { VerticalChart } from "../components/Chart/VerticalChart"
-import TableAler from "../components/TableAler/Aler";
+import { VerticalChart } from "../components/Chart/VerticalChart";
+import TableAler from "../components/TableAler/";
 import ModalAddGeneration from "../components/Modal/ModalAddGeneration";
-
-
-
-
+import SideBarMenu from "../components/SideMenu";
 
 function Copyright(props) {
     return (
@@ -120,92 +117,9 @@ function DashboardContent() {
     //endtest
     return (
         <ThemeProvider theme={mdTheme}>
-            <Box sx={{ display: "flex", }}>
+            <Box sx={{ display: "flex" }}>
                 <CssBaseline />
-                <AppBar position="absolute" open={open}></AppBar>
-                <Drawer variant="permanent" open={open}>
-                    <Toolbar
-                        sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "flex-end",
-                            px: [1],
-                            marginBottom: '17px',
-                            paddingTop: '15px'
-                        }}
-                    >
-                        {logoVisible && <img src={logo} width={180} />}
-                        <IconButton onClick={toggleDrawer}>
-                            <ChevronLeftIcon />
-                        </IconButton>
-                    </Toolbar>
-                    <Divider />
-                    <List component="nav">
-                        {mainListItems}
-                        <Divider sx={{ my: 1 }} />
-                        {secondaryListItems}
-                    </List>
-                </Drawer>
-                <Box
-                    component="main"
-                    sx={{
-
-                        backgroundColor: 'white',
-                        flexGrow: 1,
-                        height: "100vh",
-                        overflow: "auto",
-                        marginLeft: "10px",
-                        marginRight: '10px'
-
-                    }}
-                >
-                    <Stack
-                        sx={{
-                            height: "auto",
-                            backgroundColor: 'white',
-                        }}
-                    >
-                        <TableAler></TableAler>
-                        <Button onClick={openModal} variant="contained" color="success" startIcon={<AddCircleOutlineIcon sx={{ fontSize: "60px", width: "60px", height: "60px", marginBottom: "8px" }} />}
-                            sx={{
-                                marginBottom: '10px',
-
-                            }}>
-                            <h2 >Thêm hệ giám sát</h2>
-                        </Button>
-                        <Box sx={{
-                            border: '1.5px groove',
-                            backgroundColor: '#f9f9f9'
-                        }}>
-                            <ModalAddGeneration
-                                isOpen={modalIsOpen}
-                                onClose={() => {
-                                    setModalIsOpen(false);
-                                }}
-                            />
-                        </Box>
-                        {/* <MyComponent></MyComponent> */}
-                        <Box>
-                            <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                                <Grid item xs={6}>
-                                    <LineGraph></LineGraph>
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <PieChart></PieChart>
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <PieChart></PieChart>
-                                </Grid>
-                                <Grid item xs={6}>
-                                    <VerticalChart></VerticalChart>
-                                </Grid>
-
-                            </Grid>
-                        </Box>
-
-
-                    </Stack>
-                </Box>
+                <SideBarMenu />
             </Box>
         </ThemeProvider>
     );

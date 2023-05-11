@@ -15,21 +15,21 @@ export default function TableComponent({ headers, data, renderRow, ...rest }) {
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
-                        
+
                         {headers.map((header) => (
                             <TableCell key={header} sx={{ fontWeight: 'bold' }}>{header}</TableCell>
-                            
+
                         ))}
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    
-                    
-                        
-                            {data.map((item) => renderRow(item))}
-                            
-                        
-                    
+
+
+
+                    {data.map((item) => renderRow(item))}
+
+
+
                 </TableBody>
             </Table>
         </TableContainer>

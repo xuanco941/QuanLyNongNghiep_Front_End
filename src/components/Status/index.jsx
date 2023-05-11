@@ -1,8 +1,8 @@
 import React from 'react'
-import styles from './index.module.css'
+import styles from './index.css'
 
 
-const StatusComponent = () => {
+const Status = () => {
     return (
         <div className={`d-flex ${styles.gap10}`}>
             <div className={`${styles.item} ${styles.backgroundGreen}`}>M</div>
@@ -12,4 +12,4 @@ const StatusComponent = () => {
     )
 }
 
-export default StatusComponent
+export default Status
