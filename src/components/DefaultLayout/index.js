@@ -1,4 +1,4 @@
-import SideBarMenu from "../SideMenu";
+import {SideBarMenu} from "../SideMenu";
 
 function DefaultLayout({ children }) {
   console.log("CHILDREN", children);

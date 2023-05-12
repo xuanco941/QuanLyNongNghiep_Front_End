@@ -20,7 +20,7 @@ import { mainListItems, secondaryListItems } from "./listItems";
 
 import logo from "../asset/img/logo-leanway.png";
 
-import { Report } from "../components/Table/";
+import { Report } from "../components/Table/index1";
 import { useState } from "react";
 import Stack from "@mui/material/Stack";
 import { LineGraph } from "../components/Chart/LineChart";

@@ -7,7 +7,7 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import { mainListItems, secondaryListItems } from "../../layout/listItems";
+import { mainListItems, mainListItemsAdmin, secondaryListItems } from "../../layout/listItems";
 
 import logo from "../../asset/img/logo-leanway.png";
 
@@ -59,7 +59,7 @@ const Drawer = styled(MuiDrawer, {
   },
 }));
 
-function SideBarMenu() {
+export function SideBarMenu() {
   const [open, setOpen] = useState(true);
   const [logoVisible, setLogoVisible] = useState(true);
   const toggleDrawer = () => {
@@ -96,5 +96,41 @@ function SideBarMenu() {
     </>
   );
 }
+export function SideBarMenuAdmin() {
+  const [open, setOpen] = useState(true);
+  const [logoVisible, setLogoVisible] = useState(true);
+  const toggleDrawer = () => {
+    setOpen(!open);
+    setLogoVisible(!logoVisible);
+  };
 
-export default SideBarMenu;
+  return (
+    <>
+      <AppBar position="absolute" open={open}></AppBar>
+      <Drawer variant="permanent" open={open}>
+        <Toolbar
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            px: [1],
+            marginBottom: "17px",
+            paddingTop: "15px",
+          }}
+        >
+          {logoVisible && <img alt="" src={logo} width={180} />}
+          <IconButton onClick={toggleDrawer}>
+            <ChevronLeftIcon />
+          </IconButton>
+        </Toolbar>
+        <Divider />
+        <List component="nav">
+          {mainListItemsAdmin}
+          <Divider sx={{ my: 1 }} />
+          {secondaryListItems}
+        </List>
+      </Drawer>
+    </>
+  );
+}
+
