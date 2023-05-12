@@ -20,7 +20,7 @@ function App() {
     {
       component: token ? <Main /> :<Login/>,
       path: "/main",
-      layout: true,
+      layout: token ? true : false,
     },
     {
       component:  token ? <Main /> :<Login/>,
@@ -39,7 +39,7 @@ function App() {
     <Routes>
       {pageArray.map((page, index) => {
         const LayoutTotal = page.component.type;
-        console.log("page.layout", !!page.layout);
+        // console.log("page.layout", !!page.layout);
 
         let Layout;
         if (page.layout === true) {
@@ -47,7 +47,7 @@ function App() {
         } else if (page.layout === false) {
           Layout = Fragment;
         }
-        console.log("page.path", page.path);
+        // console.log("page.path", page.path);
 
         return (
           

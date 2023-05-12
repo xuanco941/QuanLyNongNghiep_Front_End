@@ -28,8 +28,10 @@ export const mainListItems = (
       <ListItemIcon>
         <ElectricMeterIcon />
       </ListItemIcon>
-      <ListItemText primary="Quy trình" />
+      <ListItemText primary="Cài đặt" />
     </ListItemButton>
+
+    
   </React.Fragment>
 );
 
@@ -38,6 +40,15 @@ export const secondaryListItems = (
     <ListSubheader component="div" inset>
       Quản lý tài khoản
     </ListSubheader>
+
+
+    <ListItemButton component={Link} to="/Detail">
+      <ListItemIcon>
+        <ElectricMeterIcon />
+      </ListItemIcon>
+      <ListItemText primary="Quản lý tài khoản" />
+    </ListItemButton>
+
 
     <LogoutButton />
   </React.Fragment>

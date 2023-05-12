@@ -70,7 +70,7 @@ function SideBarMenu() {
   return (
     <>
       <AppBar position="absolute" open={open}></AppBar>
-      <Drawer variant="permanent" open={open}>
+      <Drawer variant="permanent" open={open} sx={{  }}>
         <Toolbar
           sx={{
             display: "flex",

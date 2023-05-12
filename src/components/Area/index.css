@@ -1,0 +1,42 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.area {
+    border: 1px groove ;
+    border-radius:5px;
+    width: 350px;
+    height: 100%;
+    background: 
+    white;
+    margin: 30px 30px;
+
+  }
+.name-are{
+   padding : 15px 30px;
+   color: white;
+   font-size : 3rem;
+   font-weight: bold;
+   
+   
+
+}
+.header-box{
+  
+    background : #208fbb;
+    display:flex;
+    justify-content:left;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    
+    
+}
+.img-are {
+  padding : 0px 20px;
+  
+}
+.img-are img {
+    width: 100%;
+    height: 300px;
+    object-fit: contain;
+  }

@@ -7,15 +7,9 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import IconComponent from "../../Icon/IconComponent";
-
 import TextField from "@mui/material/TextField";
-
-
 // import FormAddSensor from "./FormAddSensor";
-
-
-
-import DeviceInfo from "./../../HMI/DeviceInfo/index";
+import DeviceInfo from "./../../HMI/DeviceInfo/";
 
 
 //test
@@ -53,33 +47,7 @@ const ModalAddGeneration = ({ isOpen, onClose }) => {
             Co2: "3 ppm",
             value: "Temp",
         },
-        // {
-        //   category: "Hệ 3",
-        //   temp: "32 °C",
-        //   apsuat: "17 PA",
-        //   EC:"02 mS",
-        //   doAm:"01 g/m³",
-        //   Co2:"3 ppm",
-        //   value: "Temp",
-        // },
-        // {
-        //   category: "Hệ 4",
-        //   temp: "32 °C",
-        //   apsuat: "17 PA",
-        //   EC:"02 mS",
-        //   doAm:"01 g/m³",
-        //   Co2:"3 ppm",
-        //   value: "Temp",
-        // },
-    ]);
-    //   const [value, setValue] = useState([
-    //     {
-    //       category: "Hệ 1",
-    //       temp: "32 C",
-    //       apsuat: "17 m2",
-    //       value: "Nhiet Do",
-    //     },
-    //   ]);
+    ])
 
     const handleNextStep = () => {
         setStep(step + 1);
@@ -147,17 +115,7 @@ const ModalAddGeneration = ({ isOpen, onClose }) => {
                           //   value={temp}
                           />
                       </Item>
-                      {/* <Item>
-                  <Autocomplete
-                    disablePortal
-                    id="combo-box-demo"
-                    options={top100Films}
-                    sx={{ width: "100%" }}
-                    renderInput={(params) => (
-                      <TextField {...params} label="Chọn địa chỉ" />
-                    )}
-                  />
-                </Item> */}
+                     
                   </Stack>
               </div>
           );
@@ -170,7 +128,6 @@ const ModalAddGeneration = ({ isOpen, onClose }) => {
       console.log("object", object);
   
       const handleAddCategory = () => {
-          // setDevices((pre) => [...pre, { category: object }]);
       };
   
       const handleFinish = () => {

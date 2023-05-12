@@ -9,6 +9,7 @@ import { PieChart } from "../../components/Chart/PieChart";
 import { VerticalChart } from "../../components/Chart/VerticalChart";
 import TableAler from "../../components/TableAler/";
 import ModalAddGeneration from "../../components/Modal/ModalAddGeneration";
+import Area from '../../components/Area';
 
 function Main() {
   const [upNumber, setUpNumber] = useState(0);
@@ -48,7 +49,7 @@ function Main() {
           }}
         >
           <TableAler></TableAler>
-          <Button
+          {/* <Button
             onClick={openModal}
             variant="contained"
             color="success"
@@ -67,22 +68,17 @@ function Main() {
             }}
           >
             <h2>Thêm hệ giám sát</h2>
-          </Button>
+          </Button> */}
           <Box
             sx={{
               border: "1.5px groove",
-              backgroundColor: "#f9f9f9",
+              
             }}
           >
-            <ModalAddGeneration
-              isOpen={modalIsOpen}
-              onClose={() => {
-                setModalIsOpen(false);
-              }}
-            />
+            <Area></Area>
           </Box>
           {/* <MyComponent></MyComponent> */}
-          <Box>
+          {/* <Box>
             <Grid
               container
               rowSpacing={1}
@@ -101,7 +97,7 @@ function Main() {
                 <VerticalChart></VerticalChart>
               </Grid>
             </Grid>
-          </Box>
+          </Box> */}
         </Stack>
       </Box>
     </>
