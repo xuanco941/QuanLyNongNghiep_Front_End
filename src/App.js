@@ -8,6 +8,7 @@ import DefaultLayout from "./components/DefaultLayout";
 import { Login, LoginAdmin } from "./screens/Login";
 import AdminDashboard from "./screens/Dashboard/AdminDashboard";
 import UserDashboard from "./screens/UserDashboard";
+import InforUser from "./screens/inforUser";
 
 
 
@@ -39,6 +40,12 @@ function App() {
       path: "/main/UserDashboard",
       layout: token ? true : false,
     },
+    {
+      component: token ? <InforUser/>: <Login />,
+      path: "/main/inforUser",
+      layout: token ? true : false,
+    },
+
 
 
 

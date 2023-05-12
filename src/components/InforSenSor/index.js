@@ -15,7 +15,7 @@ const InforSenSor = () => {
     },
     {
       create_at: "2019-04-11T08:00:05+07:00",
-      name: "Độ ẩm nước (%)",
+      name: "Độ ẩm (%)",
       parameter: "water-moisture",
       value: 12.68,
       unit: "%"
@@ -27,13 +27,7 @@ const InforSenSor = () => {
       value: 12.68,
       unit: "%"
     },
-    {
-      create_at: "2019-04-11T08:00:05+07:00",
-      name: "Độ ẩm đất (%)",
-      parameter: "soil-moisture",
-      value: 12.68,
-      unit: "%"
-    },
+   
     
   ];
 
