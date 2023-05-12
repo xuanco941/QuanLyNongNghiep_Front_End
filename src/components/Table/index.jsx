@@ -1,42 +1,37 @@
-import React from 'react';
+import * as React from 'react';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import TableComponent from './Table';
-import Status from '../Status/index';
-import DeleteIcon from '@mui/icons-material/Delete';
-import { Link, useNavigate } from 'react-router-dom';
-import SummarizeSharpIcon from '@mui/icons-material/SummarizeSharp';
-
-export function Report() {
-    const headers = ['Tên Hệ', 'Thời gian', 'Nhiệt độ','Áp suất', 'Độ ẩm','Lịch sử cảnh báo'];
-    const data = [
-        { id: 'Hệ 1', time: '16/4/2023', temp: '32°C ', pressure:'17 PA', humidity:'01 g/m³' },
-        { id: 'Hệ 2', time: '16/4/2023', temp: '32°C ', pressure:'17 PA', humidity:'02 g/m³'},
-        
-    ];
-    const navigate = useNavigate();
-const handleClick = ()=>{
-    
-}
-    const renderRow = (item,index) => (
-
-        <TableRow key={item.id}
-            sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-        >
-            <TableCell ><Link to='/Detail'>{item.id}</Link></TableCell>
-            <TableCell >{item.time}</TableCell>
-            <TableCell >{item.temp}</TableCell>
-            <TableCell >{item.pressure}</TableCell>
-            <TableCell >{item.humidity}</TableCell>
-            {/* <TableCell ><StatusComponent /></TableCell> */}
-            <TableCell ><SummarizeSharpIcon/></TableCell>
-        </TableRow>
-
-    );
+import Paper from '@mui/material/Paper';
 
 
+
+export default function TableComponent({ headers, data, renderRow, ...rest }) {
     return (
-        <TableComponent headers={headers} data={data} renderRow={renderRow} className="my-table" />
+        <TableContainer component={Paper}>
+            <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                <TableHead>
+                    <TableRow>
+
+                        {headers.map((header) => (
+                            <TableCell key={header} sx={{ fontWeight: 'bold' }}>{header}</TableCell>
+
+                        ))}
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+
+
+
+                    {data.map((item) => renderRow(item))}
+
+
+
+                </TableBody>
+            </Table>
+        </TableContainer>
     );
 }
-

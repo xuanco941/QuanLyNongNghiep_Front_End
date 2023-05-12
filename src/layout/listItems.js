@@ -8,6 +8,7 @@ import BarChartIcon from "@mui/icons-material/BarChart";
 import ElectricMeterIcon from "@mui/icons-material/ElectricMeter";
 import { Link } from "react-router-dom";
 import LogoutButton from "../components/Logout/Logout";
+import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 
 export const mainListItems = (
   <React.Fragment>
@@ -29,6 +30,24 @@ export const mainListItems = (
         <ElectricMeterIcon />
       </ListItemIcon>
       <ListItemText primary="Cài đặt" />
+    </ListItemButton>
+
+    
+  </React.Fragment>
+);
+export const mainListItemsAdmin = (
+  <React.Fragment>
+    <ListItemButton component={Link} to="/admin/main">
+      <ListItemIcon>
+        <DashboardIcon />
+      </ListItemIcon>
+      <ListItemText primary="Quản lý nông nghiệp"></ListItemText>
+    </ListItemButton>
+    <ListItemButton component={Link} to="/Detail">
+      <ListItemIcon>
+        <PersonOutlineIcon />
+      </ListItemIcon>
+      <ListItemText primary="Quản lý người dùng" />
     </ListItemButton>
 
     

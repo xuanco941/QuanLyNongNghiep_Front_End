@@ -84,87 +84,98 @@ const ModalAddGeneration = ({ isOpen, onClose }) => {
             borderRadius: "5px",
             padding: "20px",
         },
-      };
+    };
 
-      const addComponent = () => {
-          setComponentCount((prevCount) => prevCount + 1);
-      };
-  
-      const handleOnChangeStepThree = (e) => {
-          console.log("VALUE", e.target.value);
-          const values = e.target.value;
-          setTemp(values);
-      };
-  
-      const inputComponents = [];
-      for (let i = 0; i < componentCount; i++) {
-          inputComponents.push(
-              <div>
-                  <span>Cảm biến thứ {i + 1}</span>
-                  <Stack spacing={2}>
-                      <Item>
-                          <IconComponent />
-                      </Item>
-                      <Item>
-                          <TextField
-                              sx={{ width: "100%" }}
-                              //   required
-                              id="outlined-required"
-                              label="Nhập tên"
-                              onChange={handleOnChangeStepThree}
-                          //   value={temp}
-                          />
-                      </Item>
-                     
-                  </Stack>
-              </div>
-          );
-      }
-  
-      const handleTextFieldChange = async (e) => {
-          const category = e.target.value;
-          setObject(category);
-      };
-      console.log("object", object);
-  
-      const handleAddCategory = () => {
-      };
-  
-      const handleFinish = () => {
-          onClose();
-          setStep(1);
-          setDevices((pre) => [...pre, { category: object, value: temp }]);
-      };
-  
-      return (
-          <>
-              <Modal
-                  isOpen={isOpen}
-                  onRequestClose={onClose}
-                  style={customStyles}
-                  contentLabel="Steps Modal"
-                  iaHideApp={false}
-              >
-                  {step === 1 && (
-                      <form>
-                          <h2>Thông tin hệ</h2>
-                          <Stack sx={{ boxShadow: "none" }} spacing={2}>
-                              <Item>
-                                  <IconComponent />
-                              </Item>
-                              <Item>
-                                  <TextField
-                                      required
-                                      id="outlined-required"
-                                      label="Tên hệ"
-                                      sx={{ width: "100%" }}
-                                      onChange={handleTextFieldChange}
-                                  />
-                              </Item>
-                              <Item>
-                                  <Button
-                                      className="ThemHe"
-                                      onClick={() => {
+    const addComponent = () => {
+        setComponentCount((prevCount) => prevCount + 1);
+    };
+
+    const handleOnChangeStepThree = (e) => {
+        console.log("VALUE", e.target.value);
+        const values = e.target.value;
+        setTemp(values);
+    };
+
+    const inputComponents = [];
+    for (let i = 0; i < componentCount; i++) {
+        inputComponents.push(
+            <div>
+                <span>Cảm biến thứ {i + 1}</span>
+                <Stack spacing={2}>
+                    <Item>
+                        <IconComponent />
+                    </Item>
+                    <Item>
+                        <TextField
+                            sx={{ width: "100%" }}
+                            //   required
+                            id="outlined-required"
+                            label="Nhập tên"
+                            onChange={handleOnChangeStepThree}
+                        //   value={temp}
+                        />
+                    </Item>
+                    {/* <Item>
+                  <Autocomplete
+                    disablePortal
+                    id="combo-box-demo"
+                    options={top100Films}
+                    sx={{ width: "100%" }}
+                    renderInput={(params) => (
+                      <TextField {...params} label="Chọn địa chỉ" />
+                    )}
+                  />
+                </Item> */}
+                </Stack>
+            </div>
+        );
+    }
+
+    const handleTextFieldChange = async (e) => {
+        const category = e.target.value;
+        setObject(category);
+    };
+    console.log("object", object);
+
+    const handleAddCategory = () => {
+        // setDevices((pre) => [...pre, { category: object }]);
+    };
+
+    const handleFinish = () => {
+        onClose();
+        setStep(1);
+        setDevices((pre) => [...pre, { category: object, value: temp }]);
+    };
+
+    return (
+        <>
+            <Modal
+                isOpen={isOpen}
+                onRequestClose={onClose}
+                style={customStyles}
+                contentLabel="Steps Modal"
+                iaHideApp={false}
+            >
+                {step === 1 && (
+                    <form>
+                        <h2>Thông tin hệ</h2>
+                        <Stack sx={{ boxShadow: "none" }} spacing={2}>
+                            <Item>
+                                <IconComponent />
+                            </Item>
+                            <Item>
+                                <TextField
+                                    required
+                                    id="outlined-required"
+                                    label="Tên hệ"
+                                    sx={{ width: "100%" }}
+                                    onChange={handleTextFieldChange}
+                                />
+                            </Item>
+                            <Item>
+                                <Button
+                                    className="ThemHe"
+                                    onClick={() => {
                                         handleAddCategory();
                                         handleNextStep();
                                     }}
@@ -240,12 +251,12 @@ const ModalAddGeneration = ({ isOpen, onClose }) => {
                                 >
                                     Hoàn thành
                                 </Button>
-                            </Item>
-                        </Stack>
-                    </div>
+                            </Item >
+                        </Stack >
+                    </div >
                 )}
-            </Modal>
-            <DeviceInfo prop={device}></DeviceInfo>
+            </Modal >
+    <DeviceInfo prop={device}></DeviceInfo>
         </>
     );
 };
