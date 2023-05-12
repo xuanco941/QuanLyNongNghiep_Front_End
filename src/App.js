@@ -7,6 +7,7 @@ import DefaultLayoutAdmin from "./components/DefaultLayoutAdmin";
 import DefaultLayout from "./components/DefaultLayout";
 import { Login, LoginAdmin } from "./screens/Login";
 import AdminDashboard from "./screens/Dashboard/AdminDashboard";
+import UserDashboard from "./screens/UserDashboard";
 
 
 
@@ -26,12 +27,21 @@ function App() {
       path: "/admin/main",
       layout: true,
     },
+    
 
     {
       component: token ? <Main /> : <Login />,
       path: "/main",
       layout: token ? true : false,
     },
+    {
+      component: token ? <UserDashboard/>: <Login />,
+      path: "/main/UserDashboard",
+      layout: token ? true : false,
+    },
+
+
+
     {
       component: token ? <Main /> : <Login />,
       path: "/",
@@ -51,7 +61,7 @@ function App() {
       <Routes>
         {pageArray.map((page, index) => {
           const LayoutTotal = page.component.type;
-          console.log("page.layout", !!page.layout);
+          // console.log("page.layout", !!page.layout);
 
           let Layout;
           if (page.path.includes("/admin") && page.layout === true) {
@@ -61,7 +71,7 @@ function App() {
           } else {
             Layout = DefaultLayout;
           }
-          console.log("page.path", page.path);
+          // console.log("page.path", page.path);
 
           return (
 

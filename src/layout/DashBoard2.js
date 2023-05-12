@@ -28,7 +28,7 @@ import { PieChart } from "../components/Chart/PieChart";
 import { VerticalChart } from "../components/Chart/VerticalChart";
 import TableAler from "../components/TableAler/index";
 
-import Tags from "../components/Combobox/";
+import Tags from "../components/Combobox/ComboboxHe";
 import DateTo from "../components/TimePicker/DateTo";
 import { Padding } from "@mui/icons-material";
 import DateEnd from "../components/TimePicker/DateEnd";

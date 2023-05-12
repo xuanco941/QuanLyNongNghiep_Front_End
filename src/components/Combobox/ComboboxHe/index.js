@@ -4,9 +4,9 @@ import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 
-export default function Tags() {
+export default function ComboBoxHe() {
     return (
-        <Stack spacing={3} sx={{ width: '100%' }}>
+        <Stack spacing={3} sx={{ width: '100%' , maxWidth : '250px ',margin :'30px 30px' }}>
             <Autocomplete
                 multiple
                 limitTags={1}
@@ -30,26 +30,11 @@ const top100Films = [
     { title: 'Hệ 2', year: 1994 },
     { title: 'Hệ 3', year: 1994 },
     { title: 'Hệ 4', year: 1994 },
-    
     { title: 'Hệ 5', year: 1994 },
     { title: 'Hệ 6', year: 1994 },
     { title: 'Hệ 7', year: 1994 },
     { title: 'Hệ 8', year: 1994 },
     { title: 'Hệ 9', year: 1994 },
     { title: 'Hệ 10', year: 1994 },
-    { title: 'The Shawshank Redemption', year: 1994 },
-    { title: 'The Shawshank Redemption', year: 1994 },
-    { title: 'The Shawshank Redemption', year: 1994 },
-    { title: 'The Shawshank Redemption', year: 1994 },
-    { title: 'The Shawshank Redemption', year: 1994 },
-    { title: 'The Shawshank Redemption', year: 1994 },
-    { title: 'The Shawshank Redemption', year: 1994 },
-    { title: 'The Shawshank Redemption', year: 1994 },
-    { title: 'The Shawshank Redemption', year: 1994 },
-    { title: 'The Shawshank Redemption', year: 1994 },
-    { title: 'The Shawshank Redemption', year: 1994 },
-    { title: 'The Shawshank Redemption', year: 1994 },
-    { title: 'The Shawshank Redemption', year: 1994 },
-    { title: 'The Shawshank Redemption', year: 1994 },
-    { title: 'The Shawshank Redemption', year: 1994 },
+    
 ];
