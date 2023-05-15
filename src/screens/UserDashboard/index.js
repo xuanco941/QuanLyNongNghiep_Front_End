@@ -32,21 +32,25 @@ const UserDashboard = () => {
                     <Box
                         sx={{
                             border: "1.5px groove",
-
+                            padding:'10px'
                         }}
                     >
-                        <Grid item container >
+                        <Grid item container  border='2px groove' borderRadius='5px' spacing={0}>
 
-                            <Grid item md={2}>
+                            <Grid item md={3}>
                                 <ComboBoxKhu />
                             </Grid>
-                            <Grid item  md={9}>
+                            <Grid item md={8}>
                                 <ComboBoxHe />
                             </Grid>
+
+
                         </Grid>
+
                         <InforSenSor></InforSenSor>
+
                         <Box sx={{
-                            
+
                             backgroundColor: "white",
                             margin: '10px 30px'
                         }}>

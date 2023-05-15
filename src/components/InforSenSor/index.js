@@ -1,8 +1,7 @@
 import { Grid } from '@mui/material'
 import "./index.css";
 import logoSS from '../../asset/img/SSsoil-moisture.png';
-import areaLogo from '../../asset/img/area2.png'
-import { Link } from 'react-router-dom'
+import UpdateAt from '../UpdateAt';
 
 const InforSenSor = () => {
   const in4Sensor = [
@@ -12,17 +11,18 @@ const InforSenSor = () => {
       parameter: "soil-moisture",
       value: 12.68,
       unit: "%"
+      
     },
     {
       create_at: "2019-04-11T08:00:05+07:00",
-      name: "Độ ẩm (%)",
+      name: "Độ ẩm 2(%)",
       parameter: "water-moisture",
       value: 12.68,
       unit: "%"
     },
     {
       create_at: "2019-04-11T08:00:05+07:00",
-      name: "Độ ẩm đất (%)",
+      name: "Độ ẩm 1 (%)",
       parameter: "soil-moisture",
       value: 12.68,
       unit: "%"
@@ -30,9 +30,11 @@ const InforSenSor = () => {
    
     
   ];
-
   return (
+    <>
+    <UpdateAt ></UpdateAt>
     <Grid container>
+      
       {in4Sensor.map((in4Sensor) => (
 
 
@@ -55,6 +57,7 @@ const InforSenSor = () => {
 
       ))}
     </Grid>
+    </>
   );
 };
 

@@ -51,7 +51,8 @@ function Main() {
           <TableAler></TableAler>
           <Box
             sx={{
-              border: "1.5px groove",
+              border: "2px groove",
+              borderRadius:'5px',
               
             }}
           >

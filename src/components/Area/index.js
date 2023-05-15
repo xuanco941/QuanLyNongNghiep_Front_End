@@ -9,7 +9,7 @@ const Area = () => {
     {
       AreaID: "1",
       name: "Khu 1",
-      description: "Trong một thế giới được thống trị bởi  thì lòi ra 1 ông nhõi anh hùng nào đi xiên mất chị gái của main nhà ta. Đếch cần biết là đứa nào, chị đây đi gặt đầu từng đứa một, và trở",
+      description: "Nông trại cạnh khu Ba Vì",
       UpdateAt: 1608517114,
     },
     {

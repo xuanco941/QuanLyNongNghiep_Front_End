@@ -4,7 +4,7 @@ import Autocomplete from '@mui/material/Autocomplete';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 
-export default function ComboBoxHe() {
+export default function ComboBoxSenSor() {
     return (
         <Stack spacing={3} sx={{ width: '100%' , maxWidth : '350px ',margin :'30px 30px' }}>
             <Autocomplete
@@ -15,7 +15,7 @@ export default function ComboBoxHe() {
                 getOptionLabel={(option) => option.title}
                 // defaultValue={[top100Films[1], top100Films[2], top100Films[3]]}
                 renderInput={(params) => (
-                    <TextField {...params} label="Tên hệ" />
+                    <TextField {...params} label="Thông số" />
                 )}
                 sx={{ width: '100%' }}
                 
@@ -26,15 +26,13 @@ export default function ComboBoxHe() {
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [
     
-    { title: 'Hệ 1', year: 1994 },
-    { title: 'Hệ 2', year: 1994 },
-    { title: 'Hệ 3', year: 1994 },
-    { title: 'Hệ 4', year: 1994 },
-    { title: 'Hệ 5', year: 1994 },
-    { title: 'Hệ 6', year: 1994 },
-    { title: 'Hệ 7', year: 1994 },
-    { title: 'Hệ 8', year: 1994 },
-    { title: 'Hệ 9', year: 1994 },
-    { title: 'Hệ 10', year: 1994 },
+    { title: 'Nhiệt độ', year: 1994 },
+    { title: 'Độ ẩm', year: 1994 },
+    { title: 'Áp suất', year: 1994 },
+    { title: 'EC', year: 1994 },
+    
+    { title: 'PH', year: 1994 },
+    
+    
     
 ];

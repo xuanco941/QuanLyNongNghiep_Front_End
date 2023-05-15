@@ -56,16 +56,8 @@ body{
 
     }
 
-    /* .ValueSenSor .textvalue{
+    .ValueSenSor .textvalue{
       color : white;
       font-weight: bold;
       font-size : 50px
-    }  */
-
-  .ValueSenSor .valueWarning{
-    width:100%;
-    background:#208fbb;
-    border-bottom-left-radius: 7px;
-      border-bottom-right-radius: 7px;
-
-  }  
+    } 

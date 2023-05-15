@@ -9,6 +9,7 @@ import { Login, LoginAdmin } from "./screens/Login";
 import AdminDashboard from "./screens/Dashboard/AdminDashboard";
 import UserDashboard from "./screens/UserDashboard";
 import InforUser from "./screens/inforUser";
+import UserOption from "./screens/UserOption";
 
 
 
@@ -43,6 +44,10 @@ function App() {
     {
       component: token ? <InforUser/>: <Login />,
       path: "/main/inforUser",
+      layout: token ? true : false,
+    }, {
+      component: token ? <UserOption/>: <Login />,
+      path: "/main/userOption",
       layout: token ? true : false,
     },
 

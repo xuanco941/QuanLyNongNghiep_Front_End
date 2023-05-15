@@ -9,6 +9,8 @@ import ElectricMeterIcon from "@mui/icons-material/ElectricMeter";
 import { Link } from "react-router-dom";
 import LogoutButton from "../components/Logout/Logout";
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
+import SettingsIcon from '@mui/icons-material/Settings';
 
 export const mainListItems = (
   <React.Fragment>
@@ -25,9 +27,9 @@ export const mainListItems = (
       <ListItemText primary="Lưu trữ dữ liệu" />
     </ListItemButton>
 
-    <ListItemButton component={Link} to="/Detail">
+    <ListItemButton component={Link} to="/main/userOption">
       <ListItemIcon>
-        <ElectricMeterIcon />
+        <SettingsIcon />
       </ListItemIcon>
       <ListItemText primary="Cài đặt" />
     </ListItemButton>
@@ -63,7 +65,7 @@ export const secondaryListItems = (
 
     <ListItemButton component={Link} to="/main/inforUser">
       <ListItemIcon>
-        <ElectricMeterIcon />
+        <AccountBoxIcon />
       </ListItemIcon>
       <ListItemText primary="Quản lý tài khoản" />
     </ListItemButton>
