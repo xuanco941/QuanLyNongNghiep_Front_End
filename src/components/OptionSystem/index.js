@@ -10,7 +10,7 @@ const OptionSystem = () => {
       create_at: "2019-04-11T08:00:05+07:00",
       name: "Độ ẩm đất (%)",
       parameter: "warning",
-      value: 12.68,
+      value: 12,
       unit: "%"
 
     },
@@ -27,6 +27,13 @@ const OptionSystem = () => {
       parameter: "warning",
       value: 7,
       unit: "pH"
+    },
+    {
+      create_at: "2019-04-11T08:00:05+07:00",
+      name: "C02 (PPM)",
+      parameter: "warning",
+      value: 12,
+      unit: "PPM"
     },
 
 
@@ -50,8 +57,7 @@ const OptionSystem = () => {
             </div>
             <div className='ValueSenSor' style={{ display: 'flex', flexDirection: 'column'}}>
               <div style={{ fontSize: '18px', color: 'white' }}>Giá trị cảnh báo</div>
-              <input style={{ fontSize: '30px', border: 'none', fontWeight: 'bold', color: 'white',marginLeft:'10px', marginBottom: '10px' ,width:'30%'}} defaultValue={`${in4Sensor.value}`} className='valueWarning'></input>
-              
+              <input style={{ fontSize: '40px', border: 'none', fontWeight: 'bold', color: 'white',marginLeft:'40px', marginBottom: '10px' ,width:'30%'}} defaultValue={`${in4Sensor.value}`} className='valueWarning'></input>    
             </div>
 
             {/* // </Link> */}
