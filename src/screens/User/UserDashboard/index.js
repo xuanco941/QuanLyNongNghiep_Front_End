@@ -1,11 +1,13 @@
 import { Grid, Box, Stack } from "@mui/material"
-import { styled } from '@mui/material/styles';
-import ComboBoxHe from "../../components/Combobox/ComboboxHe";
-import ComboBoxKhu from "../../components/Combobox/ComboboxKhu";
-import TableAler from '../../components/TableAler'
-import InforSenSor from "../../components/InforSenSor";
-import { LineChart } from "../../components/Chart/LineChart";
-import { PieChart } from "../../components/Chart/PieChart";
+
+
+
+import ComboBoxHe from "../../../components/Combobox/ComboboxHe";
+import ComboBoxKhu from "../../../components/Combobox/ComboboxKhu";
+import TableAler from '../../../components/TableAler'
+import InforSenSor from "../../../components/InforSenSor";
+import { LineChart } from "../../../components/Chart/LineChart";
+import { PieChart } from "../../../components/Chart/PieChart";
 const UserDashboard = () => {
     return (
 
@@ -35,7 +37,7 @@ const UserDashboard = () => {
                             padding:'10px'
                         }}
                     >
-                        <Grid item container  border='2px groove' borderRadius='5px' spacing={0}>
+                        <Grid item container  border='2px groove' borderRadius='5px' spacing={0} sx={{padding:'10px 0px'}}>
 
                             <Grid item md={3}>
                                 <ComboBoxKhu />

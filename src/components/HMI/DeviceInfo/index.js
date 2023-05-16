@@ -1,10 +1,13 @@
-import * as React from "react";
-import { useState } from "react";
+
 import { useTheme } from "@mui/material/styles";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import { Grid, Typography, colors } from "@mui/material";
 import Box from "@mui/material/Box";
+
+
+import * as React from "react";
+import { useState } from "react";
 import "./index.css";
 
 const DeviceInfo = (prop) => {
@@ -15,6 +18,7 @@ const DeviceInfo = (prop) => {
             temp: "Nhiet Do:",
         },
     ]);
+    
 
     return (
         <Grid container>
@@ -55,6 +59,7 @@ const DeviceInfo = (prop) => {
                             </span>
                             <span className="value">{item.apsuat}</span>
                         </div>
+                        
 
                     </div>
                 );

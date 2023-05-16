@@ -22,6 +22,9 @@ export default function DateTo() {
         onChange={handleDateChange}
         renderInput={(params) => <TextField {...params} />}
         format="DD-MM-YYYY"
+        sx={{
+          width:'100%'
+        }}
       />
     </LocalizationProvider>
   );

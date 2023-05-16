@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid, Card, CardContent, Typography, Button, Modal, Box } from '@mui/material';
 import ErrorIcon from '@mui/icons-material/Error';
-import TableComponent from '../../components/Table/'
 import { Report } from '../Table/index1';
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -26,8 +25,9 @@ const TableAler = () => {
 
     return (
         <Grid>
-            <Card sx={{
-                marginBottom: '10px', border: '1.5px groove',
+            <Box sx={{
+                marginBottom: '10px', border: '2px groove',
+                borderRadius:'5px',
                 backgroundColor: 'white',
 
             }}>
@@ -49,7 +49,7 @@ const TableAler = () => {
                         </Grid>
                     </Grid>
                 </CardContent>
-            </Card >
+            </Box >
             <Modal
                 keepMounted
                 open={open}

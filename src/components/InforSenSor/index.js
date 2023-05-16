@@ -15,17 +15,17 @@ const InforSenSor = () => {
     },
     {
       create_at: "2019-04-11T08:00:05+07:00",
-      name: "Độ ẩm 2(%)",
+      name: "Nhiệt độ (°C)",
       parameter: "water-moisture",
-      value: 12.68,
-      unit: "%"
+      value: 32.21,
+      unit: "°C"
     },
     {
       create_at: "2019-04-11T08:00:05+07:00",
-      name: "Độ ẩm 1 (%)",
+      name: "Độ PH (pH)",
       parameter: "soil-moisture",
-      value: 12.68,
-      unit: "%"
+      value: 7,
+      unit: "pH"
     },
    
     

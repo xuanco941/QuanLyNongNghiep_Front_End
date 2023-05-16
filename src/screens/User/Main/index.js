@@ -1,15 +1,11 @@
 import { useState } from "react";
 import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Grid from "@mui/material/Grid";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import Stack from "@mui/material/Stack";
-import { LineChart } from "../../components/Chart/LineChart";
-import { PieChart } from "../../components/Chart/PieChart";
-import { VerticalChart } from "../../components/Chart/VerticalChart";
-import TableAler from "../../components/TableAler/";
-import ModalAddGeneration from "../../components/Modal/ModalAddGeneration";
-import Area from '../../components/Area';
+
+
+
+import TableAler from "../../../components/TableAler/";
+import Area from '../../../components/Area';
 
 function Main() {
   const [upNumber, setUpNumber] = useState(0);

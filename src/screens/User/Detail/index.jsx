@@ -1,6 +1,6 @@
 
 import React from 'react'
-import Dashboard2 from '../../layout/DashBoard2'
+import Dashboard2 from '../../../layout/DashBoard2'
 
 
 const Detail = () => {

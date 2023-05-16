@@ -1,9 +1,12 @@
-import { Box, Stack, Grid } from '@mui/material'
-import TableAler from '../../components/TableAler'
+import { Box, Stack, Grid,Button } from '@mui/material'
+
+
+
+import TableAler from '../../../components/TableAler'
 import "./index.css";
-import avatar from '../../asset/img/avatar.jpg'
-import {Button} from '@mui/material'
-import { BorderBottom } from '@mui/icons-material';
+import avatar from '../../../asset/img/avatar.jpg'
+
+
 
 
 const InforUser = () => {
