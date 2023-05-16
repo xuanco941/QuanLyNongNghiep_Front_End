@@ -41,7 +41,7 @@ export const mainListItemsAdmin = (
       </ListItemIcon>
       <ListItemText primary="Quản lý nông nghiệp"></ListItemText>
     </ListItemButton>
-    <ListItemButton component={Link} to="/Detail">
+    <ListItemButton component={Link} to="/admin/user-manager">
       <ListItemIcon>
         <PersonOutlineIcon />
       </ListItemIcon>

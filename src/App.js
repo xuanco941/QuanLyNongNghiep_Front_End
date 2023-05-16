@@ -7,6 +7,12 @@ import DefaultLayoutAdmin from "./components/DefaultLayoutAdmin";
 import DefaultLayout from "./components/DefaultLayout";
 import { Login, LoginAdmin } from "./screens/Login";
 import AdminDashboard from "./screens/Dashboard/AdminDashboard";
+import AddArea from "./screens/Admin/AddArea";
+import DetailAdmin from "./screens/Admin/Detail";
+import UserManager from "./screens/Admin/UserManager";
+import DetailSystem from "./screens/Admin/DetailSystem";
+import DetaiUser from "./screens/Admin/DetailUser";
+import AddUser from "./screens/Admin/AddUser";
 
 
 
@@ -16,6 +22,7 @@ function App() {
   const navigate = useNavigate();
 
   const pageArray = [
+    //Admin
     {
       component: <LoginAdmin />,
       path: "/admin",
@@ -26,7 +33,39 @@ function App() {
       path: "/admin/main",
       layout: true,
     },
+    {
+      component: <AddArea />,
+      path: "/admin/add-area",
+      layout: true,
+    },
+    {
+      component: <DetailAdmin />,
+      path: "/admin/detail",
+      layout: true,
+    },
+    {
+      component: <DetailSystem />,
+      path: "/admin/detail-system",
+      layout: true,
+    },
+    {
+      component: <UserManager />,
+      path: "/admin/user-manager",
+      layout: true,
+    },
+    {
+      component: <DetaiUser />,
+      path: "/admin/detail-user",
+      layout: true,
+    },
+    {
+      component: <AddUser />,
+      path: "/admin/add-user",
+      layout: true,
+    },
 
+
+//User
     {
       component: token ? <Main /> : <Login />,
       path: "/main",

@@ -23,13 +23,7 @@ export default function TableComponent({ headers, data, renderRow, ...rest }) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-
-
-
-                    {data.map((item) => renderRow(item))}
-
-
-
+                    {data.map((item,index) => renderRow(item,index))}
                 </TableBody>
             </Table>
         </TableContainer>
