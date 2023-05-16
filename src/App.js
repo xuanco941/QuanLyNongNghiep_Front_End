@@ -26,7 +26,8 @@ function App() {
 
   const pageArray = [
     //Admin
-    {
+     //Admin
+     {
       component: <LoginAdmin />,
       path: "/admin",
       layout: false,
@@ -34,6 +35,36 @@ function App() {
     {
       component: <AdminDashboard />,
       path: "/admin/main",
+      layout: true,
+    },
+    {
+      component: <AddArea />,
+      path: "/admin/add-area",
+      layout: true,
+    },
+    {
+      component: <DetailAdmin />,
+      path: "/admin/detail",
+      layout: true,
+    },
+    {
+      component: <DetailSystem />,
+      path: "/admin/detail-system",
+      layout: true,
+    },
+    {
+      component: <UserManager />,
+      path: "/admin/user-manager",
+      layout: true,
+    },
+    {
+      component: <DetaiUser />,
+      path: "/admin/detail-user",
+      layout: true,
+    },
+    {
+      component: <AddUser />,
+      path: "/admin/add-user",
       layout: true,
     },
     
