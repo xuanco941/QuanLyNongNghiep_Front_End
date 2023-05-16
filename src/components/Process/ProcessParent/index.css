@@ -1,6 +1,7 @@
 .containerParent {
     /* display :'flex'; */
     margin:10px 10px;
+    background : white;
     
     
     
@@ -9,7 +10,7 @@
 }
 .parentProcess{
     border:2px groove;
-    background : white;
+    
     margin-top:10px
     
 }
@@ -20,5 +21,6 @@
     font-weight:bold;
     /* font-style: italic; */
     text-decoration: underline;
+    
     
 }

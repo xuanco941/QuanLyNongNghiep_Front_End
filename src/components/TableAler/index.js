@@ -25,8 +25,9 @@ const TableAler = () => {
 
     return (
         <Grid>
-            <Card sx={{
-                marginBottom: '10px', border: '1.5px groove',
+            <Box sx={{
+                marginBottom: '10px', border: '2px groove',
+                borderRadius:'5px',
                 backgroundColor: 'white',
 
             }}>
@@ -48,7 +49,7 @@ const TableAler = () => {
                         </Grid>
                     </Grid>
                 </CardContent>
-            </Card >
+            </Box >
             <Modal
                 keepMounted
                 open={open}

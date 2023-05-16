@@ -171,7 +171,9 @@ function DashboardContent() {
 
 
             </Box>
+            <Box sx={{border:'2px groove',borderRadius:'5px'}}>
             <Report></Report>
+            </Box>
           </Stack>
         </Box>
       </Box>

@@ -41,6 +41,7 @@ const UserOption = () => {
                             border: '2px groove',
                             margin: "10px 10px",
                             borderRadius: '5px',
+                            background:'white'
                         }}>
                         <Grid container spacing={2}>
                             <Grid className="Area" item xs={4}  margin='20px' >
@@ -57,6 +58,7 @@ const UserOption = () => {
                         margin: "10px 10px",
                         border: '2px groove',
                         borderRadius: '5px',
+                        background:'white'
                     }} >
                         
                         <OptionSystem></OptionSystem>
@@ -66,6 +68,7 @@ const UserOption = () => {
                         margin: "10px 10px",
                         border: '2px groove',
                         borderRadius: '5px',
+                        background:'white'
                     }} >
                         <div style={{marginLeft:'10px',fontSize:'30px',fontWeight:'bold'}}>Cài đặt quy trình </div>
                     <ProcessParent></ProcessParent>
