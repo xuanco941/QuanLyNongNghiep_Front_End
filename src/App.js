@@ -10,6 +10,12 @@ import AdminDashboard from "./screens/Dashboard/AdminDashboard";
 import UserDashboard from "./screens/UserDashboard";
 import InforUser from "./screens/inforUser";
 import UserOption from "./screens/UserOption";
+import AddArea from "./screens/Admin/AddArea";
+import DetailAdmin from "./screens/Admin/Detail";
+import UserManager from "./screens/Admin/UserManager";
+import DetailSystem from "./screens/Admin/DetailSystem";
+import DetaiUser from "./screens/Admin/DetailUser";
+import AddUser from "./screens/Admin/AddUser";
 
 
 
@@ -19,6 +25,7 @@ function App() {
   const navigate = useNavigate();
 
   const pageArray = [
+    //Admin
     {
       component: <LoginAdmin />,
       path: "/admin",
@@ -31,6 +38,8 @@ function App() {
     },
     
 
+
+//User
     {
       component: token ? <Main /> : <Login />,
       path: "/main",
