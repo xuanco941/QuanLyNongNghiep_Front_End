@@ -1,15 +1,17 @@
 import React, { Fragment } from "react";
 import { Route, Routes, useNavigate } from "react-router-dom";
-import { useEffect } from "react";
-import Detail from "./screens/Detail/index";
-import Main from "./screens/Main/index";
+
+
+
+import Detail from "./screens/User/Detail/";
+import Main from "./screens/User/Main/index";
 import DefaultLayoutAdmin from "./components/DefaultLayoutAdmin";
 import DefaultLayout from "./components/DefaultLayout";
 import { Login, LoginAdmin } from "./screens/Login";
 import AdminDashboard from "./screens/Dashboard/AdminDashboard";
 import UserDashboard from "./screens/User/UserDashboard";
 import InforUser from "./screens/User/inforUser";
-import UserOption from "./screens/UserOption";
+import UserOption from "./screens/User/UserOption";
 import AddArea from "./screens/Admin/AddArea";
 import DetailAdmin from "./screens/Admin/Detail";
 import UserManager from "./screens/Admin/UserManager";

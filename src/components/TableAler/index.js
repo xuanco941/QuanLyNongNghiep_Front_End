@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid, Card, CardContent, Typography, Button, Modal, Box } from '@mui/material';
 import ErrorIcon from '@mui/icons-material/Error';
-import TableComponent from '../../components/Table/'
 import { Report } from '../Table/index1';
 import CloseIcon from '@mui/icons-material/Close';
 

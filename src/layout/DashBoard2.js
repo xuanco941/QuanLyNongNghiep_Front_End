@@ -8,18 +8,14 @@ import MuiAppBar from "@mui/material/AppBar";
 import { Grid } from "@mui/material";
 import GetAppIcon from '@mui/icons-material/GetApp';
 import ManageSearchIcon from '@mui/icons-material/ManageSearch';
+import Stack from "@mui/material/Stack";
+import { useState } from "react";
 
 
 
 import { Report } from "../components/Table/index1";
-import { useState } from "react";
-import Stack from "@mui/material/Stack";
-
 import TableAler from "../components/TableAler/index";
-
-
 import DateTo from "../components/TimePicker/DateTo";
-
 import DateEnd from "../components/TimePicker/DateEnd";
 import ComboBoxHe from "../components/Combobox/ComboboxHe";
 import ComboBoxKhu from "../components/Combobox/ComboboxKhu";
@@ -138,12 +134,12 @@ function DashboardContent() {
 
 
               <div className="filerUnder" style={{ display: 'flex', justifyContent: 'space-between', margin: '10px 10px' }}>
-                <div className="RangeTime" style={{ display: 'flex', border: '2px groove', padding: '10px' ,width:'926px',justifyContent: 'space-between'}}>
-                  <div className="dateTo"  > 
+                <div className="RangeTime" style={{ display: 'flex', border: '2px groove', padding: '10px' ,width:'940px',justifyContent: 'space-between',gap:'213px'}}>
+                  <div className="dateTo" style={{ flex: 1, }} > 
                     <DateTo />
                   </div>
 
-                  <div className="dateEnd" style={{ }}>
+                  <div className="dateEnd" style={{ flex: 1 }}>
                     <DateEnd />
 
                   </div>

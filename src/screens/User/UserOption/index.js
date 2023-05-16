@@ -1,9 +1,9 @@
 import { Box, Stack, Grid } from '@mui/material'
-import TableAler from '../../components/TableAler'
-import ComboBoxHe from '../../components/Combobox/ComboboxHe';
-import ComboBoxKhu from '../../components/Combobox/ComboboxKhu';
-import OptionSystem from '../../components/OptionSystem';
-import ProcessParent from '../../components/Process/ProcessParent';
+import TableAler from '../../../components/TableAler'
+import ComboBoxHe from '../../../components/Combobox/ComboboxHe';
+import ComboBoxKhu from '../../../components/Combobox/ComboboxKhu';
+import OptionSystem from '../../../components/OptionSystem';
+import ProcessParent from '../../../components/Process/ProcessParent';
 
 
 
