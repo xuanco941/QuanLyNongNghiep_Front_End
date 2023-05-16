@@ -1,0 +1,13 @@
+.containerChild {
+   padding:10px;
+}
+.childProcess{
+    display:flex;
+   padding:10px;
+    justify-content:space-between;
+}
+.TitleChildProcess{
+    border:2px groove;
+    margin-top:5px;
+    background-color:#f9f9f9
+}

@@ -1,0 +1,24 @@
+.containerParent {
+    /* display :'flex'; */
+    margin:10px 10px;
+    
+    
+    
+    
+    
+}
+.parentProcess{
+    border:2px groove;
+    background : white;
+    margin-top:10px
+    
+}
+.TitleParentProcesss{
+    padding-Top :10px;
+    padding-left :10px;
+    font-size:25px;
+    font-weight:bold;
+    /* font-style: italic; */
+    text-decoration: underline;
+    
+}

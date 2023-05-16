@@ -3,6 +3,7 @@ import TableAler from '../../components/TableAler'
 import ComboBoxHe from '../../components/Combobox/ComboboxHe';
 import ComboBoxKhu from '../../components/Combobox/ComboboxKhu';
 import OptionSystem from '../../components/OptionSystem';
+import ProcessParent from '../../components/Process/ProcessParent';
 
 
 
@@ -29,7 +30,7 @@ const UserOption = () => {
 
                         backgroundColor: "#f9f9f9",
                         margin: "10px 0px",
-                        height: "100%",
+                        height: "auto",
                         border: '2px groove',
                         borderRadius: '5px',
 
@@ -41,11 +42,11 @@ const UserOption = () => {
                             margin: "10px 10px",
                             borderRadius: '5px',
                         }}>
-                        <Grid container spacing={2} >
-                            <Grid className="Area" item xs={4} >
+                        <Grid container spacing={2}>
+                            <Grid className="Area" item xs={4}  margin='20px' >
                                 <ComboBoxKhu ></ComboBoxKhu>
                             </Grid>
-                            <Grid className="System" item xs={4} >
+                            <Grid className="System" item xs={4}  margin='20px' >
                                 <ComboBoxHe></ComboBoxHe>
                             </Grid>
                            
@@ -57,14 +58,17 @@ const UserOption = () => {
                         border: '2px groove',
                         borderRadius: '5px',
                     }} >
+                        
                         <OptionSystem></OptionSystem>
                     </Box>
                     <Box sx={{
+                        height:'auto',
                         margin: "10px 10px",
                         border: '2px groove',
                         borderRadius: '5px',
                     }} >
-
+                        <div style={{marginLeft:'10px',fontSize:'30px',fontWeight:'bold'}}>Cài đặt quy trình </div>
+                    <ProcessParent></ProcessParent>
 
 
 

@@ -123,7 +123,7 @@ function DashboardContent() {
 
               }}
             >
-              <Grid container spacing={2} >
+              <Grid container spacing={2} marginTop='5px' marginBottom="10px" >
                 <Grid className="Area"  item xs={4} >
                   <ComboBoxKhu ></ComboBoxKhu>
                 </Grid>
@@ -154,7 +154,7 @@ function DashboardContent() {
                   <div className="ExportEx" style={{ marginRight: '23px' }}>
                     <Button
                       variant="contained"
-                      sx={{ height: '80%', fontWeight: "Bold", minWidth: '170px' }}
+                      sx={{ height: '80%', fontWeight: "Bold", minWidth: '170px',background:'#208fbb' }}
                     >
                       Xuất Excel
                       <GetAppIcon sx={{marginLeft:'7px'}}></GetAppIcon>
@@ -164,7 +164,7 @@ function DashboardContent() {
                   <div className="Search" >
                     <Button
                       variant="contained"
-                      sx={{ height: '80%', fontWeight: "Bold", minWidth: '163px' ,marginRight:'140px' }}
+                      sx={{ height: '80%', fontWeight: "Bold", minWidth: '163px' ,marginRight:'140px',background:'#208fbb' }}
                     >
                       Tìm kiếm
                       <ManageSearchIcon sx={{marginLeft:'7px'}}></ManageSearchIcon>

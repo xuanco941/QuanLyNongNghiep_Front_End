@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 
 export default function ComboBoxKhu() {
     return (
-        <Stack spacing={3} sx={{ width: '100%' , maxWidth : '350px ',margin :'30px 25px' }}>
+        <Stack spacing={3} sx={{ width: '100%' , maxWidth : '350px ',margin :'0px 25px' }}>
             <Autocomplete
                 multiple
                 limitTags={1}
