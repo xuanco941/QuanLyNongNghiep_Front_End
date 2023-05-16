@@ -89,10 +89,6 @@ function App() {
       path: "/main/userOption",
       layout: token ? true : false,
     },
-
-
-
-
     {
       component: token ? <Main /> : <Login />,
       path: "/",

@@ -1,9 +1,12 @@
-import { Autocomplete, Box, Button, Modal, TableCell, TableRow, TextField, Typography } from '@mui/material'
+import { Autocomplete, Box, Breadcrumbs, Button, Divider, Modal, TableCell, TableRow, TextField, Typography } from '@mui/material'
 import React from 'react'
 import { ListControl, ListControlDetail } from '../../../components/ListControl';
 import { useParams, useLocation, Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import TableComponent from '../../../components/Table';
+import styles from './index.module.css'
 const DetailAdmin = () => {
+    const navigate = useNavigate();
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
     const id = searchParams.get('id');
@@ -38,6 +41,7 @@ const DetailAdmin = () => {
         border: '2px solid #000',
         boxShadow: 24,
         p: 4,
+        
     };
 
     const listAreas = [
@@ -128,10 +132,24 @@ const DetailAdmin = () => {
     );
     return (
         <>
+            <div role="presentation" >
+                <Breadcrumbs className={styles.breadcrumb} aria-label="breadcrumb">
+                    <Link className={`${styles.breadcrumbItem} ${styles.font14}`} color="#1F8FBB" sx={{ color: 'black' }} to={'/admin/main'}>
+                        Quản lý nông nghiệp
+                    </Link>
+                    {/* <Link
+                        underline="hover"
+                        color="inherit"
+                        to={'/admin/main'}
+                        
+                    >
+                        Thêm khu vụ
+                    </Link> */}
+                    <Typography className={styles.font14} color="text.primary">Chi tiết khu vực</Typography>
+                </Breadcrumbs>
+            </div>
             <Box sx={{ width: '100%', padding: '10px' }}>
-                <Typography sx={{ textAlign: 'center' }} variant="h5" gutterBottom>
-                    Chi tiết khu vực
-                </Typography>
+                
 
                 {listAreas.map((data, index) => {
                     if (data.id == id) {
@@ -139,9 +157,10 @@ const DetailAdmin = () => {
                     }
 
                 })}
+                <Divider sx={{mt:4, mb:2}}>Danh sách tài khoản trong hệ</Divider>
                 <TableComponent headers={headers} data={listSystems1} renderRow={renderRow} />
-                <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
-                    <Button onClick={handleOpen}>Thêm hệ</Button>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', mt:5 }}>
+                    <Button className={styles.btnAddSystem} onClick={handleOpen}>Thêm hệ</Button>
                     <Modal
                         open={open}
                         onClose={handleClose}
@@ -171,7 +190,7 @@ const DetailAdmin = () => {
                             </Box>
                         </Box>
                     </Modal>
-                    <Button>Đồng ý</Button>
+                    <Button onClick={()=>{navigate('/admin/main')}} className={styles.btnSubmit}>Đồng ý</Button>
                 </Box>
             </Box>
         </>

@@ -38,7 +38,7 @@ export const mainListItems = (
   </React.Fragment>
 );
 export const mainListItemsAdmin = (
-  <React.Fragment>
+  <React.Fragment >
     <ListItemButton component={Link} to="/admin/main">
       <ListItemIcon>
         <DashboardIcon />
@@ -64,6 +64,24 @@ export const secondaryListItems = (
 
 
     <ListItemButton component={Link} to="/main/inforUser">
+      <ListItemIcon>
+        <AccountBoxIcon />
+      </ListItemIcon>
+      <ListItemText primary="Quản lý tài khoản" />
+    </ListItemButton>
+
+
+    <LogoutButton />
+  </React.Fragment>
+);
+export const secondaryListItemsAdmin = (
+  <React.Fragment>
+    <ListSubheader component="div" inset>
+      Quản lý tài khoản
+    </ListSubheader>
+
+
+    <ListItemButton component={Link} to="/admin/inforUser">
       <ListItemIcon>
         <AccountBoxIcon />
       </ListItemIcon>

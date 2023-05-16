@@ -1,10 +1,3 @@
-.form {
-    border: 1px solid rgb(65, 141, 239);
-    padding: 20px;
-    margin: 40px 0;
-    border-radius: 10px;
-}
-
 .breadcrumb {
     background: rgb(75, 192, 237);
     background: linear-gradient(90deg, rgba(75, 192, 237, 1) 0%, rgba(180, 233, 251, 1) 23%, rgba(255, 255, 255, 1) 100%);
@@ -23,15 +16,13 @@
 .font14 {
     font-size: 14px !important;
 }
-.btnBack {
+.btnAddSystem{
     padding: 7px 50px !important;
-    border: 1px solid #C4C4C4 !important;
-    background-color: #F4F5F9 !important;
-    color: #99A2A7 !important;
+    background-color: green !important;
+    color: white !important;
     border-radius: 50px !important;
 }
-
-.btnContinue {
+.btnSubmit{
     padding: 7px 50px !important;
     background-color: #1F8FBB !important;
     color: white !important;

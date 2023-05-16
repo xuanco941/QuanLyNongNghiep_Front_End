@@ -50,6 +50,7 @@ const DetailSystem = () => {
 
     return (
         <>
+        
             <Box sx={{ width: '100%', padding: '10px' }}>
                 <Typography sx={{ textAlign: 'center' }} variant="h5" gutterBottom>
                     Chi tiết hệ
