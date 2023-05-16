@@ -115,17 +115,7 @@ const ModalAddGeneration = ({ isOpen, onClose }) => {
                         //   value={temp}
                         />
                     </Item>
-                    {/* <Item>
-                  <Autocomplete
-                    disablePortal
-                    id="combo-box-demo"
-                    options={top100Films}
-                    sx={{ width: "100%" }}
-                    renderInput={(params) => (
-                      <TextField {...params} label="Chọn địa chỉ" />
-                    )}
-                  />
-                </Item> */}
+                    
                 </Stack>
             </div>
         );

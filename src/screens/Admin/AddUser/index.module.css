@@ -1,0 +1,13 @@
+.btnThem {
+    padding: 7px 50px !important;
+    background-color: #1F8FBB !important;
+    color: white !important;
+    border-radius: 50px !important;
+}
+.btnHuy{
+    padding: 7px 50px !important;
+    border: 1px solid #C4C4C4 !important;
+    background-color: #F4F5F9 !important;
+    color: #99A2A7 !important;
+    border-radius: 50px !important;
+}
