@@ -69,8 +69,9 @@ export function SideBarMenu() {
 
   return (
     <>
-      <AppBar position="absolute" open={open}></AppBar>
-      <Drawer variant="permanent" open={open}>
+    
+      <AppBar position="absolute" open={open} ></AppBar>
+      <Drawer variant="permanent" open={open}  >
         <Toolbar
           sx={{
             display: "flex",
@@ -96,6 +97,14 @@ export function SideBarMenu() {
     </>
   );
 }
+
+
+
+
+
+
+
+
 export function SideBarMenuAdmin() {
   const [open, setOpen] = useState(true);
   const [logoVisible, setLogoVisible] = useState(true);

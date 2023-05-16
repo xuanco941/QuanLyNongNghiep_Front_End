@@ -12,6 +12,7 @@ import {
 } from 'chart.js';
 import Card from "@mui/material/Card"
 import { CardContent } from "@mui/material";
+import { Button } from "react-bootstrap";
  
   
   ChartJS.register(
@@ -63,8 +64,10 @@ export const LineChart = ()=>{
         <React.Fragment>
             <Card style={{backgroundColor:"#f9f9f9",marginTop:"10px",}}>
                 <CardContent sx={{
+                    
                     height:'300px'
                 }}>
+                    {/* <Button>123</Button> */}
                     <Line options = {option}
                             data = {data}
                             

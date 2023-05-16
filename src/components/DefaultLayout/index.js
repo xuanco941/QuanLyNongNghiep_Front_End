@@ -1,10 +1,10 @@
 import {SideBarMenu} from "../SideMenu";
 
 function DefaultLayout({ children }) {
-  console.log("CHILDREN", children);
+  // console.log("CHILDREN", children);
   return (
     <>
-      <SideBarMenu />
+      <SideBarMenu/>
       {children}
     </>
   );

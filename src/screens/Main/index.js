@@ -9,6 +9,7 @@ import { PieChart } from "../../components/Chart/PieChart";
 import { VerticalChart } from "../../components/Chart/VerticalChart";
 import TableAler from "../../components/TableAler/";
 import ModalAddGeneration from "../../components/Modal/ModalAddGeneration";
+import Area from '../../components/Area';
 
 function Main() {
   const [upNumber, setUpNumber] = useState(0);
@@ -48,59 +49,14 @@ function Main() {
           }}
         >
           <TableAler></TableAler>
-          <Button
-            onClick={openModal}
-            variant="contained"
-            color="success"
-            startIcon={
-              <AddCircleOutlineIcon
-                sx={{
-                  fontSize: "60px",
-                  width: "60px",
-                  height: "60px",
-                  marginBottom: "8px",
-                }}
-              />
-            }
-            sx={{
-              marginBottom: "10px",
-            }}
-          >
-            <h2>Thêm hệ giám sát</h2>
-          </Button>
           <Box
             sx={{
-              border: "1.5px groove",
-              backgroundColor: "#f9f9f9",
+              border: "2px groove",
+              borderRadius:'5px',
+              
             }}
           >
-            <ModalAddGeneration
-              isOpen={modalIsOpen}
-              onClose={() => {
-                setModalIsOpen(false);
-              }}
-            />
-          </Box>
-          {/* <MyComponent></MyComponent> */}
-          <Box>
-            <Grid
-              container
-              rowSpacing={1}
-              columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-            >
-              <Grid item xs={6}>
-                <LineChart></LineChart>
-              </Grid>
-              <Grid item xs={6}>
-                <PieChart></PieChart>
-              </Grid>
-              <Grid item xs={6}>
-                <PieChart></PieChart>
-              </Grid>
-              <Grid item xs={6}>
-                <VerticalChart></VerticalChart>
-              </Grid>
-            </Grid>
+            <Area></Area>
           </Box>
         </Stack>
       </Box>

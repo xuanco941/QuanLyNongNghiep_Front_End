@@ -13,15 +13,14 @@ export default function DateEnd() {
   };
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
+    <LocalizationProvider dateAdapter={AdapterDayjs}> 
       <DatePicker
-      
-      
         label="Đến ngày"
         value={selectedDate}
         onChange={handleDateChange}
-        renderInput={(params) => <TextField {...params} />}
+        renderInput={(params) => <TextField {...params }   />}
         format="DD-MM-YYYY"
+        slotProps={{ textField: { fullWidth: true } }}
       />
     </LocalizationProvider>
   );

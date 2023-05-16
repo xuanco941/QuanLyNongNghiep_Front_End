@@ -13,6 +13,9 @@ import UserManager from "./screens/Admin/UserManager";
 import DetailSystem from "./screens/Admin/DetailSystem";
 import DetaiUser from "./screens/Admin/DetailUser";
 import AddUser from "./screens/Admin/AddUser";
+import UserDashboard from "./screens/UserDashboard";
+import InforUser from "./screens/inforUser";
+import UserOption from "./screens/UserOption";
 
 
 
@@ -63,6 +66,7 @@ function App() {
       path: "/admin/add-user",
       layout: true,
     },
+    
 
 
 //User
@@ -71,6 +75,24 @@ function App() {
       path: "/main",
       layout: token ? true : false,
     },
+    {
+      component: token ? <UserDashboard/>: <Login />,
+      path: "/main/UserDashboard",
+      layout: token ? true : false,
+    },
+    {
+      component: token ? <InforUser/>: <Login />,
+      path: "/main/inforUser",
+      layout: token ? true : false,
+    }, {
+      component: token ? <UserOption/>: <Login />,
+      path: "/main/userOption",
+      layout: token ? true : false,
+    },
+
+
+
+
     {
       component: token ? <Main /> : <Login />,
       path: "/",
@@ -90,7 +112,7 @@ function App() {
       <Routes>
         {pageArray.map((page, index) => {
           const LayoutTotal = page.component.type;
-          console.log("page.layout", !!page.layout);
+          // console.log("page.layout", !!page.layout);
 
           let Layout;
           if (page.path.includes("/admin") && page.layout === true) {
@@ -100,7 +122,7 @@ function App() {
           } else {
             Layout = DefaultLayout;
           }
-          console.log("page.path", page.path);
+          // console.log("page.path", page.path);
 
           return (
 

@@ -1,0 +1,71 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .Sensor {
+      border: 1px groove ;
+      border-radius:7px;
+      width: 350px;
+      height: 100%;
+      background: 
+      white;
+      margin: 10px 30px;
+  
+    }
+  .name-sensor{
+     padding : 15px 20px;
+     color: white;
+     font-size : 2rem;
+     font-weight: bold;
+     
+     
+  
+  }
+  .header-box{
+    
+      background : #208fbb;
+      display:flex;
+      justify-content:center;
+      border-top-left-radius: 7px;
+      border-top-right-radius: 7px;
+      
+      
+  }
+  
+  .icon-sensor {
+    
+
+     
+    }
+    .icon-sensor img {
+      margin-left :10px;
+      margin-top : 20px;
+      max-width: 50px;
+      height: auto;
+    }
+
+    .ValueSenSor {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      border-top : 1px solid white;
+      background : #208fbb;
+      border-bottom-left-radius: 7px;
+      border-bottom-right-radius: 7px;
+
+    }
+
+    /* .ValueSenSor .textvalue{
+      color : white;
+      font-weight: bold;
+      font-size : 50px
+    }  */
+
+  .ValueSenSor .valueWarning{
+    width:100%;
+    background:#208fbb;
+    border-bottom-left-radius: 7px;
+      border-bottom-right-radius: 7px;
+
+  }  
