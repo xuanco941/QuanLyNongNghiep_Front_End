@@ -48,9 +48,7 @@ const UserOption = () => {
                             <Grid className="System" item xs={4} >
                                 <ComboBoxHe></ComboBoxHe>
                             </Grid>
-                            {/* <Grid className="123"  item xs={4} >
-                  <ComboBoxSenSor></ComboBoxSenSor>
-                </Grid> */}
+                           
                         </Grid>
                     </Box>
 
@@ -66,13 +64,13 @@ const UserOption = () => {
                         border: '2px groove',
                         borderRadius: '5px',
                     }} >
+
+
+
+
+
                         
                     </Box>
-
-
-
-
-
                 </Box>
             </Box>
         </>
