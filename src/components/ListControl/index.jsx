@@ -91,21 +91,23 @@ export function ListControlDetail({ param, param1, param2, listLabel, listSystem
         boxShadow: 24,
         p: 4,
     };
-   
+
 
     return (
         <>
-            <Box sx={{ mt: 2, mb: 1, textAlign: 'center' }}>
-                <TextField sx={{ width: '100%' }} defaultValue={param} id="outlined-basic" label={listLabel[0]} variant="outlined" />
-            </Box>
-            <Box sx={{ mt: 2, mb: 1, textAlign: 'center' }}>
-                <TextField sx={{ width: '100%' }} defaultValue={param1} id="outlined-basic" label={listLabel[1]} variant="outlined" />
-            </Box>
-            <Box sx={{ mt: 2, mb: 1, textAlign: 'center' }}>
-                <TextField sx={{ width: '100%' }} defaultValue={param2} id="outlined-basic" label={listLabel[2]} variant="outlined" />
+            <Box sx={{border: '2px solid #1F8FBB', padding: '20px', borderRadius: '10px' }}>
+                <Box sx={{ mt: 2, mb: 1, textAlign: 'center' }}>
+                    <TextField sx={{ width: '100%' }} defaultValue={param} id="outlined-basic" label={listLabel[0]} variant="outlined" />
+                </Box>
+                <Box sx={{ mt: 2, mb: 1, textAlign: 'center' }}>
+                    <TextField sx={{ width: '100%' }} defaultValue={param1} id="outlined-basic" label={listLabel[1]} variant="outlined" />
+                </Box>
+                <Box sx={{ mt: 2, mb: 1, textAlign: 'center' }}>
+                    <TextField sx={{ width: '100%' }} defaultValue={param2} id="outlined-basic" label={listLabel[2]} variant="outlined" />
+                </Box>
             </Box>
 
-            
+
             {/* <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                 {listSystems.map((value) => {
                     const labelId = `checkbox-list-label-${value}`;
