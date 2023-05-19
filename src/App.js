@@ -18,9 +18,8 @@ import UserManager from "./screens/Admin/UserManager";
 import DetailSystem from "./screens/Admin/DetailSystem";
 import DetaiUser from "./screens/Admin/DetailUser";
 import AddUser from "./screens/Admin/AddUser";
-import UserDashboard from "./screens/UserDashboard";
-import InforUser from "./screens/inforUser";
-import UserOption from "./screens/UserOption";
+
+
 
 
 

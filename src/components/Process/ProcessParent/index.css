@@ -24,3 +24,8 @@
     
     
 }
+.Rangetime{
+    display:flex;
+    margin:10px 0px 0px 10px;
+    gap:20px;
+}

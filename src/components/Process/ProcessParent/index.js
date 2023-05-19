@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Button } from "@mui/material";
 import AddToPhotosIcon from '@mui/icons-material/AddToPhotos';
-
+import DateTo from "../../TimePicker/DateTo"
+import DateEnd from "../../TimePicker/DateEnd"
 
 
 
@@ -19,7 +20,11 @@ const ProcessParent = () => {
     <div className="containerParent">
       {[...Array(numProcesses)].map((_, index) => (
         <div className="parentProcess" key={index}>
-          <div className="TitleParentProcesss" >Quy trình {index + 1}</div>
+        <div className="TitleParentProcesss" ><input defaultValue={`Quy trình ${index + 1}`} /></div>
+          <div className="Rangetime">
+            <div className=""><DateTo /></div>
+            <div className=""><DateEnd /></div>
+          </div>
           <ProcessChild />
         </div>
       ))}

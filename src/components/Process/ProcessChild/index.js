@@ -6,8 +6,7 @@ import { Button, Modal, Box } from "@mui/material"
 
 import "./index.css"
 import ComboBoxSenSor from "../../Combobox/ComboBoxSensor"
-import DateTo from "../../TimePicker/DateTo"
-import DateEnd from "../../TimePicker/DateEnd"
+
 
 import React, { useState } from 'react'
 
@@ -56,8 +55,6 @@ const ProcessChild = () => {
                     <input placeholder='Chỉ số Max' style={{ height: '100%', textAlign: 'center', }}>
                     </input>
                 </div>
-                <div className="ElementChild"><DateTo></DateTo></div>
-                <div className="ElementChild"><DateEnd></DateEnd></div>
             </div>
         </div>
     )):null;
