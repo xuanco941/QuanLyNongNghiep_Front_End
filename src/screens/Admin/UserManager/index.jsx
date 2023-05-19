@@ -11,6 +11,10 @@ import TableComponent from '../../../components/Table';
 import { ListControlDetail } from '../../../components/ListControl';
 import AddIcon from '@mui/icons-material/Add';
 import { Link } from 'react-router-dom';
+import CloseIcon from '@mui/icons-material/Close';
+import DeleteIcon from '@mui/icons-material/Delete';
+
+// import IconButton from '@mui/material/IconButton';
 const UserManager = () => {
     const [selectedItemId, setSelectedItemId] = React.useState(null);
 
@@ -21,7 +25,7 @@ const UserManager = () => {
         setSelectedItemId(null);
     };
 
-    const navigate= useNavigate();
+    const navigate = useNavigate();
 
     const listLabel = ['Họ và tên', 'Địa chỉ', 'Email']
 
@@ -61,7 +65,11 @@ const UserManager = () => {
             <TableCell >{item.email}</TableCell>
             <TableCell >{item.phoneNumber}</TableCell>
             <TableCell ><Link to={`/admin/detail-user?id=${item.id}`}>Xem chi tiết</Link></TableCell>
-            <TableCell >Xóa</TableCell>
+            <TableCell >
+                <IconButton>
+                    <DeleteIcon />
+                </IconButton>
+            </TableCell>
             {/* <TableCell >
                 <Button onClick={() => handleClickOpen(item.id)}>Xem chi tiết</Button>
                 {selectedItemId === item.id && (

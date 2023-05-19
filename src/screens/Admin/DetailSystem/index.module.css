@@ -16,21 +16,9 @@
 .font14 {
     font-size: 14px !important;
 }
-.btnAddSystem{
-    padding: 7px 50px !important;
-    background-color: green !important;
-    color: white !important;
-    border-radius: 50px !important;
-}
 .btnSubmit{
     padding: 7px 50px !important;
     background-color: #1F8FBB !important;
-    color: white !important;
-    border-radius: 50px !important;
-}
-.btnCancel{
-    padding: 7px 50px !important;
-    background-color: #ccc !important;
     color: white !important;
     border-radius: 50px !important;
 }

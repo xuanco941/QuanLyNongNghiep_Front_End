@@ -1,10 +1,11 @@
-import { Autocomplete, Box, Breadcrumbs, Button, Divider, Modal, TableCell, TableRow, TextField, Typography } from '@mui/material'
+import { Autocomplete, Box, Breadcrumbs, Button, Divider, IconButton, Modal, TableCell, TableRow, TextField, Typography } from '@mui/material'
 import React from 'react'
 import { ListControl, ListControlDetail } from '../../../components/ListControl';
 import { useParams, useLocation, Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import TableComponent from '../../../components/Table';
 import styles from './index.module.css'
+import CloseIcon from '@mui/icons-material/Close';
 const DetailAdmin = () => {
     const navigate = useNavigate();
     const location = useLocation();
@@ -37,11 +38,12 @@ const DetailAdmin = () => {
         left: '50%',
         transform: 'translate(-50%, -50%)',
         width: 400,
+        height: '500px',
         bgcolor: 'background.paper',
-        border: '2px solid #000',
+        borderRadius: '10px',
         boxShadow: 24,
-        p: 4,
-        
+
+
     };
 
     const listAreas = [
@@ -75,20 +77,46 @@ const DetailAdmin = () => {
                 {selectedItemId === item.id && (
                     <Modal
                         open={true}
-                        onClose={handleClickClose}
                         aria-labelledby={`modal-modal-title-${item.id}`}
                         aria-describedby="modal-modal-description"
                     >
                         <Box sx={style}>
                             <Typography
+                                sx={{
+                                    textAlign: 'center',
+                                    padding: '15px 0',
+                                    borderBottom: '1px solid #ccc',
+                                    backgroundColor: '#1F8FBB',
+                                    borderRadius: '10px 10px 0 0',
+                                    color: 'white'
+                                }}
                                 id={`modal-modal-title-${item.id}`}
                                 variant="h6"
                                 component="h2"
                             >
                                 Danh sách tài khoản
                             </Typography>
-                            <ListControl key={index} lists={item.account} />
-                            <Button onClick={handleOpenModal}>Thêm tài khoản</Button>
+                            <IconButton onClick={handleClickClose} sx={{
+                                position: 'absolute',
+                                top: '0px',
+                                right: '0px',
+                                color: 'white'
+                            }}>
+                                <CloseIcon />
+                            </IconButton>
+                            <Box sx={{ padding: '20px' }}>
+                                <ListControl key={index} lists={item.account} />
+                                <Button sx={{
+                                    padding: '7px 50px',
+                                    backgroundColor: '#1F8FBB',
+                                    color: 'white',
+                                    '&:hover': {
+                                        backgroundColor: '#1F8FBB',
+
+                                    }
+
+                                }} onClick={handleOpenModal}>Thêm tài khoản</Button>
+                            </Box>
                             <Modal
                                 open={openModal}
                                 onClose={handleCloseModal}
@@ -96,26 +124,52 @@ const DetailAdmin = () => {
                                 aria-describedby="modal-modal-description"
                             >
                                 <Box sx={style}>
-                                    <Typography sx={{ marginBottom: '20px' }} id="modal-modal-title" variant="h6" component="h2">
+                                    <Typography sx={{
+                                        textAlign: 'center',
+                                        padding: '15px 0',
+                                        borderBottom: '1px solid #ccc',
+                                        backgroundColor: '#1F8FBB',
+                                        borderRadius: '10px 10px 0 0',
+                                        color: 'white'
+                                    }}
+                                        id="modal-modal-title" variant="h6" component="h2">
                                         Thêm tài khoản
                                     </Typography>
-                                    <Autocomplete
-                                        sx={{ marginBottom: '20px' }}
-                                        multiple
-                                        id="tags-outlined"
-                                        options={listUser}
-                                        getOptionLabel={(option) => option.username}
+                                    <IconButton onClick={handleCloseModal} sx={{
+                                        position: 'absolute',
+                                        top: '0px',
+                                        right: '0px',
+                                        color: 'white'
+                                    }}>
+                                        <CloseIcon />
+                                    </IconButton>
+                                    <Box sx={{ padding: '20px' }}>
+                                        <Autocomplete
+                                            sx={{ marginBottom: '20px' }}
+                                            multiple
+                                            id="tags-outlined"
+                                            options={listUser}
+                                            getOptionLabel={(option) => option.username}
 
-                                        filterSelectedOptions
-                                        renderInput={(params) => (
-                                            <TextField
-                                                {...params}
-                                                label="Tài khoản"
+                                            filterSelectedOptions
+                                            renderInput={(params) => (
+                                                <TextField
+                                                    {...params}
+                                                    label="Tài khoản"
 
-                                            />
-                                        )}
-                                    />
-                                    <Button onClick={handleCloseModal} >Thêm</Button>
+                                                />
+                                            )}
+                                        />
+                                        <Button sx={{
+                                            padding: '7px 50px',
+                                            backgroundColor: '#1F8FBB',
+                                            color: 'white',
+                                            '&:hover': {
+                                                backgroundColor: '#1F8FBB',
+                                            }
+                                        }}
+                                            onClick={handleCloseModal} >Thêm</Button>
+                                    </Box>
                                 </Box>
                             </Modal>
                         </Box>
@@ -149,17 +203,15 @@ const DetailAdmin = () => {
                 </Breadcrumbs>
             </div>
             <Box sx={{ width: '100%', padding: '10px' }}>
-                
-
                 {listAreas.map((data, index) => {
                     if (data.id == id) {
                         return <ListControlDetail key={index} param={data.time} param1={data.pressure} param2={data.humidity} listLabel={listLabel} listSystems={listSystems} />
                     }
 
                 })}
-                <Divider sx={{mt:4, mb:2}}>Danh sách tài khoản trong hệ</Divider>
+                <Divider sx={{ mt: 4, mb: 2 }}>Danh sách hệ trong khu vực</Divider>
                 <TableComponent headers={headers} data={listSystems1} renderRow={renderRow} />
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', mt:5 }}>
+                <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 5 }}>
                     <Button className={styles.btnAddSystem} onClick={handleOpen}>Thêm hệ</Button>
                     <Modal
                         open={open}
@@ -168,29 +220,46 @@ const DetailAdmin = () => {
                         aria-describedby="modal-modal-description"
                     >
                         <Box sx={style}>
-                            <Typography id="modal-modal-title" variant="h6" component="h2">
+                            <Typography sx={{
+                                textAlign: 'center',
+                                padding: '15px 0',
+                                borderBottom: '1px solid #ccc',
+                                backgroundColor: '#1F8FBB',
+                                borderRadius: '10px 10px 0 0',
+                                color: 'white'
+                            }}
+                                id="modal-modal-title" variant="h6" component="h2">
                                 Thêm hệ
                             </Typography>
-                            <Box sx={{ mt: 2, mb: 1, textAlign: 'center' }}>
-                                <TextField sx={{ width: '100%' }} id="outlined-basic" label="Tên hệ" variant="outlined" />
-                            </Box>
-                            <Box sx={{ mt: 2, mb: 1, textAlign: 'center' }}>
-                                <TextField sx={{ width: '100%' }} id="outlined-basic" label="Địa chỉ" variant="outlined" />
-                            </Box>
-                            <Box sx={{ mt: 2, mb: 1, textAlign: 'center' }}>
-                                <TextField sx={{ width: '100%' }} id="outlined-basic" label="IP Gateway" variant="outlined" />
-                            </Box>
-                            <Box sx={{ mt: 2, mb: 1, textAlign: 'center' }}>
-                                <TextField sx={{ width: '100%' }} id="outlined-basic" label="Mô tả" variant="outlined" />
-                            </Box>
+                            <IconButton onClick={handleClose} sx={{
+                                position: 'absolute',
+                                top: '0px',
+                                right: '0px',
+                                color: 'white'
+                            }}>
+                                <CloseIcon />
+                            </IconButton>
+                            <Box sx={{ padding: '20px' }}>
+                                <Box sx={{ mt: 2, mb: 1, textAlign: 'center' }}>
+                                    <TextField sx={{ width: '100%' }} id="outlined-basic" label="Tên hệ" variant="outlined" />
+                                </Box>
+                                <Box sx={{ mt: 2, mb: 1, textAlign: 'center' }}>
+                                    <TextField sx={{ width: '100%' }} id="outlined-basic" label="Địa chỉ" variant="outlined" />
+                                </Box>
+                                <Box sx={{ mt: 2, mb: 1, textAlign: 'center' }}>
+                                    <TextField sx={{ width: '100%' }} id="outlined-basic" label="IP Gateway" variant="outlined" />
+                                </Box>
+                                <Box sx={{ mt: 2, mb: 1, textAlign: 'center' }}>
+                                    <TextField sx={{ width: '100%' }} id="outlined-basic" label="Mô tả" variant="outlined" />
+                                </Box>
 
-                            <Box sx={{ mt: 2, mb: 1, textAlign: 'center' }}>
-                                <Button onClick={handleClose}>Thêm</Button>
-                                <Button onClick={handleClose}>Hủy</Button>
+                                <Box sx={{ mt: 2, mb: 1, textAlign: 'center' }}>
+                                    <Button className={styles.btnSubmit} onClick={handleClose}>Thêm</Button>
+                                </Box>
                             </Box>
                         </Box>
                     </Modal>
-                    <Button onClick={()=>{navigate('/admin/main')}} className={styles.btnSubmit}>Đồng ý</Button>
+                    <Button onClick={() => { navigate('/admin/main') }} className={styles.btnSubmit}>Đồng ý</Button>
                 </Box>
             </Box>
         </>

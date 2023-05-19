@@ -18,6 +18,7 @@ import UserManager from "./screens/Admin/UserManager";
 import DetailSystem from "./screens/Admin/DetailSystem";
 import DetaiUser from "./screens/Admin/DetailUser";
 import AddUser from "./screens/Admin/AddUser";
+import ChangePassword from "./screens/Admin/ChangePassword";
 
 
 
@@ -68,6 +69,11 @@ function App() {
     {
       component: <AddUser />,
       path: "/admin/add-user",
+      layout: true,
+    },
+    {
+      component: <ChangePassword />,
+      path: "/admin/change-password",
       layout: true,
     },
     
