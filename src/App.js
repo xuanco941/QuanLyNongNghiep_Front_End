@@ -21,6 +21,8 @@ import AddUser from "./screens/Admin/AddUser";
 import UserDashboard from "./screens/UserDashboard";
 import InforUser from "./screens/inforUser";
 import UserOption from "./screens/UserOption";
+import ChangePassword from "./screens/Admin/ChangePassword";
+
 
 
 
@@ -72,6 +74,11 @@ function App() {
       path: "/admin/add-user",
       layout: true,
     },
+    {
+      component: <ChangePassword />,
+      path: "/admin/change-password",
+      layout: true,
+    },
     
 
 
@@ -95,7 +102,6 @@ function App() {
       path: "/main/userOption",
       layout: token ? true : false,
     },
-
     {
       component: token ? <Main /> : <Login />,
       path: "/",

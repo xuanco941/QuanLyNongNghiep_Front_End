@@ -81,11 +81,11 @@ export const secondaryListItemsAdmin = (
     </ListSubheader>
 
 
-    <ListItemButton component={Link} to="/admin/inforUser">
+    <ListItemButton component={Link} to="/admin/change-password">
       <ListItemIcon>
         <AccountBoxIcon />
       </ListItemIcon>
-      <ListItemText primary="Quản lý tài khoản" />
+      <ListItemText primary="Đổi mật khẩu" />
     </ListItemButton>
 
 
