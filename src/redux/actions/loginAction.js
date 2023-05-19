@@ -5,7 +5,7 @@ import 'toastr/build/toastr.css';
 
 export const login = (username, password) => async dispatch => {
     try {
-        const response = await axios.post('https://localhost:7055/API/Auth/Login', {
+        const response = await axios.post('https://localhost:7055/API/Auth/User', {
             username,
             password
         }, {

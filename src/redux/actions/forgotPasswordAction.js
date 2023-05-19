@@ -6,7 +6,7 @@ import 'toastr/build/toastr.css';
 
 const forgot = (username) => async dispatch => {
     try {
-        const response = await axios.post('https://localhost:7055/API/Auth/ForgotPassword', {
+        const response = await axios.post('https://localhost:7055/API/User/ForgotPassword', {
             username
         }, {
             headers: {
