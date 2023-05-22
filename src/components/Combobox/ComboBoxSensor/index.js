@@ -6,7 +6,7 @@ import Stack from '@mui/material/Stack';
 
 export default function ComboBoxSenSor() {
     return (
-        <Stack spacing={3} sx={{ width: '100%' , maxWidth : '350px ',margin :'0px 30px' }}>
+        <Stack spacing={3} sx={{  minWidth:'250px', maxWidth : '350px ',margin :'0px 0px' }}>
             <Autocomplete
                 multiple
                 limitTags={1}
@@ -17,7 +17,7 @@ export default function ComboBoxSenSor() {
                 renderInput={(params) => (
                     <TextField {...params} label="Thông số" />
                 )}
-                sx={{ width: '100%' }}
+                
                 
             />
         </Stack>

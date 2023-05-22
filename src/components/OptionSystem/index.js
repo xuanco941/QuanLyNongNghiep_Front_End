@@ -60,7 +60,7 @@ const OptionSystem = () => {
             </div>
             <div className='ValueSenSor' style={{ display: 'flex', flexDirection: 'column'}}>
               <div style={{ fontSize: '18px', color: 'white' }}>Giá trị cảnh báo</div>
-              <input style={{ fontSize: '40px', border: 'none', fontWeight: 'bold', color: 'white', marginBottom: '10px' ,textAlign:'center'}} defaultValue={`${in4Sensor.value}`} className='valueWarning'></input>    
+              <input type ='number' style={{ fontSize: '40px', border: 'none', fontWeight: 'bold', color: 'white', marginBottom: '10px' ,textAlign:'center'}} defaultValue={`${in4Sensor.value}`} className='valueWarning'></input>    
             </div>
 
             {/* // </Link> */}

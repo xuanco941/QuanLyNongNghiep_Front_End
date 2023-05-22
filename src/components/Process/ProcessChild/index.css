@@ -1,14 +1,15 @@
 .containerChild {
-   padding:10px;
+   padding:0px 10px 10px 10px;
 }
 .childProcess{
     display:flex;
    padding:10px;
     justify-content:space-between;
+
     background:#f9f9f9
 }
 .TitleChildProcess{
     border:2px groove;
-    margin-top:5px;
+    margin-top:0px;
     
 }
